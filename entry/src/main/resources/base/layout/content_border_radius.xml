@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <DirectionalLayout
+        ohos:id="$+id:slide_container"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:orientation="vertical">
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:text="Border Radius Not Set" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:border_radius="0"
+            ohos:text="Border Radius 0" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:border_radius="20"
+            ohos:text="Border Radius 20" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:border_radius="40"
+            ohos:text="Border Radius 40" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:border_radius="60"
+            ohos:text="Border Radius 60" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:border_radius="80"
+            ohos:text="Border Radius 80" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:border_radius="100"
+            ohos:text="Border Radius 100" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:border_radius="120"
+            ohos:text="Border Radius 120" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:border_radius="140"
+            ohos:text="Border Radius 140" />
+    </DirectionalLayout>
+</ScrollView>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <DirectionalLayout
+        ohos:id="$+id:slide_container"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:orientation="vertical">
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:id="$+id:slide_1"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:area_margin="0"
+            ohos:text="Area Margin 0" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:area_margin="4"
+            ohos:text="Area Margin 4" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:area_margin="8"
+            ohos:text="Area Margin 8" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:area_margin="12"
+            ohos:text="Area Margin 12" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:area_margin="20"
+            ohos:text="Area Margin 20" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:area_margin="24"
+            ohos:text="Area Margin 24 (default)" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:area_margin="28"
+            ohos:text="Area Margin 28" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:area_margin="36"
+            ohos:text="Area Margin 36" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:area_margin="42"
+            ohos:text="Area Margin 42" />
+
+    </DirectionalLayout>
+</ScrollView>

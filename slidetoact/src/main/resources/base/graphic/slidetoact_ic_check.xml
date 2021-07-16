@@ -1,0 +1,13 @@
+<vector
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:width="48vp"
+    ohos:height="48vp"
+    ohos:viewportHeight="24.0"
+    ohos:viewportWidth="24.0">
+    <path
+        ohos:name="check"
+        ohos:fillColor="#00000000"
+        ohos:pathData="m7.21,25.35l10.3,10.37l23.29,-23.43"
+        ohos:strokeColor="$color:slidetoact_white"
+        ohos:strokeWidth="3.5"/>
+</vector>

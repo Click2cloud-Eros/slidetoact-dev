@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:id="$+id:slide_container"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <com.ncorti.slidetoact.SlideToActView
+        ohos:id="$+id:event_slider"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:margin="6vp"
+        ohos:text="Test me and read the log" />
+
+    <Text
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:margin="8vp"
+        ohos:text_alignment="center"
+        ohos:text="$string:event_log"
+        ohos:text_size="24fp"
+        ohos:text_font="bold" />
+
+    <Text
+        ohos:id="$+id:event_log"
+        ohos:width="match_parent"
+        ohos:height="match_parent"
+        ohos:left_margin="8vp"
+        ohos:right_margin="8vp"
+        ohos:text_alignment="bottom"
+        ohos:text_size="14fp" />
+
+</DirectionalLayout>

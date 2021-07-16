@@ -11,6 +11,86 @@
     {
       "name": "mainability_HelloWorld",
       "value": "Hello World"
+    },
+    {
+      "name": "sample_title",
+      "value": "Sample SlideToActView"
+    },
+    {
+      "name": "welcome",
+      "value": "Welcome \uD83D\uDE01"
+    },
+    {
+      "name": "area_margin",
+      "value": "area margin"
+    },
+    {
+      "name": "icon_margin",
+      "value": "icon margin"
+    },
+    {
+      "name": "colors",
+      "value": "Colors"
+    },
+    {
+      "name": "border_radius",
+      "value": "Border Radius"
+    },
+    {
+      "name": "elevation",
+      "value": "Elevation"
+    },
+    {
+      "name": "text_size",
+      "value": "Text Size"
+    },
+    {
+      "name": "slider_dimension",
+      "value": "Slider Dimension"
+    },
+    {
+      "name": "event_callback",
+      "value": "Event Callback"
+    },
+    {
+      "name": "locked_slider",
+      "value": "Locked Slider"
+    },
+    {
+      "name": "custom_icon",
+      "value": "Custom Icon"
+    },
+    {
+      "name": "reversed_slider",
+      "value": "Reversed Slider"
+    },
+    {
+      "name": "animation_duration",
+      "value": "Animation duration"
+    },
+    {
+      "name": "bump_vibration",
+      "value": "Bump Vibration"
+    },
+    {
+      "name": "event_log",
+      "value": "Event Log"
+    },
+    {
+      "name": "welcome_body",
+      "value": "Press the following buttons to checkout different SlideToActView and understand each parameter. You can reset the sliders pressing the Reset button in the Toolbar. Enjoy :)"
+    },
+    {
+      "name": "use_app_icon",
+      "value": "Use app icon"
+    },
+    {
+      "name": "use_cloud_icon",
+      "value": "Use Cloud icon"
+    },
+    {
+      "name": "complete_custom_icon",
+      "value": "Complete custom icon"
     }
   ]
 }

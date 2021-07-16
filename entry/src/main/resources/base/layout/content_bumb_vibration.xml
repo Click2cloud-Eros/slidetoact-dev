@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <DirectionalLayout
+        ohos:id="$+id:slide_container"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:orientation="vertical">
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:bump_vibration="30"
+            ohos:text="Bump vibration 30" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:bump_vibration="50"
+            ohos:text="Bump vibration 50" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:bump_vibration="100"
+            ohos:text="Bump vibration 100" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:bump_vibration="130"
+            ohos:text="Bump vibration 130" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:bump_vibration="150"
+            ohos:text="Bump vibration 150" />
+
+        <com.ncorti.slidetoact.SlideToActView
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="6vp"
+            ohos:bump_vibration="200"
+            ohos:text="Bump vibration 200" />
+
+    </DirectionalLayout>
+
+</ScrollView>
