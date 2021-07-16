@@ -1,85 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<DependentLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:height="match_parent"
-    ohos:width="match_parent"
-    ohos:orientation="vertical">
+    ohos:width="match_parent">
 
-    <DirectionalLayout
-        ohos:id="$+id:slide_container"
+    <ScrollView
+        xmlns:ohos="http://schemas.huawei.com/res/ohos"
+        ohos:height="match_parent"
         ohos:width="match_parent"
-        ohos:height="match_content"
+        ohos:above="$id:btn_reset_slider"
+        ohos:padding="8vp"
         ohos:orientation="vertical">
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
+        <DirectionalLayout
+            ohos:id="$+id:slide_container"
             ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="90"
-            ohos:text="Slider Height 90" />
-
-        <com.ncorti.slidetoact.SlideToActView
             ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="120"
-            ohos:text="Slider Height 120" />
+            ohos:orientation="vertical">
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="140"
-            ohos:text="Slider Height 140" />
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="90"
+                ohos:text="Slider Height 90" />
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="160"
-            ohos:text="Slider Height 160" />
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="120"
+                ohos:text="Slider Height 120" />
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="180"
-            ohos:text="Slider Height 180" />
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="140"
+                ohos:text="Slider Height 140" />
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="200"
-            ohos:text="Slider Height 200" />
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="160"
+                ohos:text="Slider Height 160" />
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="240"
-            ohos:text="Slider Height 240" />
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="180"
+                ohos:text="Slider Height 180" />
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="260"
-            ohos:text="Slider Height 260" />
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="200"
+                ohos:text="Slider Height 200" />
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="300"
-            ohos:text="Slider Height 300" />
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="240"
+                ohos:text="Slider Height 240" />
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_height="340"
-            ohos:text="Slider Height 340" />
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="260"
+                ohos:text="Slider Height 260" />
 
-    </DirectionalLayout>
-</ScrollView>
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="300"
+                ohos:text="Slider Height 300" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_height="340"
+                ohos:text="Slider Height 340" />
+
+        </DirectionalLayout>
+    </ScrollView>
+
+    <Button
+        ohos:id="$+id:btn_reset_slider"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:align_parent_bottom="true"
+        ohos:margin="4vp"
+        ohos:padding="8vp"
+        ohos:background_element="$ohos:color:id_color_activated_start_dark"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="Reset Slider"
+        ohos:text_size="14fp"
+        />
+
+</DependentLayout>

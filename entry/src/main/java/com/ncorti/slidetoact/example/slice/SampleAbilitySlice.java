@@ -93,6 +93,16 @@ public class SampleAbilitySlice extends AbilitySlice {
                 break;
         }
         mSlideList = getSlideList();
+
+        findComponentById(ResourceTable.Id_btn_reset_slider)
+                .setClickedListener(new Component.ClickedListener() {
+                    @Override
+                    public void onClick(Component component) {
+                        for (SlideToActView slide : mSlideList) {
+                            slide.resetSlider();
+                        }
+                    }
+                });
     }
 
     @Override

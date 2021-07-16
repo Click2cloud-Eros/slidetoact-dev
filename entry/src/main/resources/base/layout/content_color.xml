@@ -1,83 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<DependentLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:height="match_parent"
-    ohos:width="match_parent"
-    ohos:orientation="vertical">
+    ohos:width="match_parent">
 
-    <DirectionalLayout
-        ohos:id="$+id:slide_container"
+    <ScrollView
+        ohos:height="match_parent"
         ohos:width="match_parent"
+        ohos:above="$id:btn_reset_slider"
+        ohos:orientation="vertical"
+        ohos:padding="8vp">
+
+        <DirectionalLayout
+            ohos:id="$+id:slide_container"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="vertical">
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:outer_color="$color:md_red_A200"
+                ohos:text="Accent Red"/>
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:outer_color="$color:md_purple_A200"
+                ohos:text="Accent Purple"/>
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:outer_color="$color:md_indigo_A200"
+                ohos:text="Accent Indigo"/>
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:outer_color="$color:md_deep_orange_A200"
+                ohos:text="Accent Deep Orange"/>
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:inner_color="$color:md_grey_800"
+                ohos:margin="6vp"
+                ohos:outer_color="$color:md_amber_A200"
+                ohos:text="Accent Amber - Grey 800"/>
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:inner_color="$color:md_grey_800"
+                ohos:margin="6vp"
+                ohos:outer_color="$color:md_teal_A200"
+                ohos:text="Accent Teal - Grey 800"/>
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:inner_color="$color:md_grey_800"
+                ohos:margin="6vp"
+                ohos:outer_color="$color:md_green_A200"
+                ohos:text="Accent Green - Grey 800"/>
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:inner_color="$color:md_white_1000"
+                ohos:margin="6vp"
+                ohos:outer_color="$color:md_grey_900"
+                ohos:text="Grey 900 - White"/>
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:inner_color="$color:md_grey_900"
+                ohos:margin="6vp"
+                ohos:outer_color="$color:md_white_1000"
+                ohos:text="Grey 900 - White"/>
+
+        </DirectionalLayout>
+    </ScrollView>
+
+    <Button
+        ohos:id="$+id:btn_reset_slider"
         ohos:height="match_content"
-        ohos:orientation="vertical">
+        ohos:width="match_parent"
+        ohos:align_parent_bottom="true"
+        ohos:background_element="$ohos:color:id_color_activated_start_dark"
+        ohos:layout_alignment="horizontal_center"
+        ohos:margin="4vp"
+        ohos:padding="8vp"
+        ohos:text="Reset Slider"
+        ohos:text_size="14fp"
+        />
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:outer_color="$color:md_red_A200"
-            ohos:text="Accent Red" />
-
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:outer_color="$color:md_purple_A200"
-            ohos:text="Accent Purple" />
-
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:outer_color="$color:md_indigo_A200"
-            ohos:text="Accent Indigo" />
-
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:outer_color="$color:md_deep_orange_A200"
-            ohos:text="Accent Deep Orange" />
-
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:outer_color="$color:md_amber_A200"
-            ohos:inner_color="$color:md_grey_800"
-            ohos:text="Accent Amber - Grey 800" />
-
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:outer_color="$color:md_teal_A200"
-            ohos:inner_color="$color:md_grey_800"
-            ohos:text="Accent Teal - Grey 800" />
-
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:outer_color="$color:md_green_A200"
-            ohos:inner_color="$color:md_grey_800"
-            ohos:text="Accent Green - Grey 800" />
-
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:outer_color="$color:md_grey_900"
-            ohos:inner_color="$color:md_white_1000"
-            ohos:text="Grey 900 - White" />
-
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:height="match_content"
-            ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:outer_color="$color:md_white_1000"
-            ohos:inner_color="$color:md_grey_900"
-            ohos:text="Grey 900 - White" />
-
-    </DirectionalLayout>
-</ScrollView>
+</DependentLayout>
