@@ -24,63 +24,63 @@
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:icon_margin="0"
-                ohos:text="Icon margin 0" />
+                ohos:text="$string:txt_icon_margin_0" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:icon_margin="4"
-                ohos:text="Icon margin 4" />
+                ohos:text="$string:txt_icon_margin_4" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:icon_margin="8"
-                ohos:text="Icon margin 8" />
+                ohos:text="$string:txt_icon_margin_8" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:icon_margin="16"
-                ohos:text="Icon margin 16" />
+                ohos:text="$string:txt_icon_margin_16" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:icon_margin="24"
-                ohos:text="Icon margin 24" />
+                ohos:text="$string:txt_icon_margin_24" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:icon_margin="28"
-                ohos:text="Icon margin 28 (default)" />
+                ohos:text="$string:txt_icon_margin_28" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:icon_margin="32"
-                ohos:text="Icon margin 32" />
+                ohos:text="$string:txt_icon_margin_32" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:icon_margin="36"
-                ohos:text="Icon margin 36" />
+                ohos:text="$string:txt_icon_margin_36" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:icon_margin="42"
-                ohos:text="Icon margin 42" />
+                ohos:text="$string:txt_icon_margin_42" />
 
         </DirectionalLayout>
     </ScrollView>
@@ -94,7 +94,7 @@
         ohos:padding="8vp"
         ohos:background_element="$ohos:color:id_color_activated_start_dark"
         ohos:layout_alignment="horizontal_center"
-        ohos:text="Reset Slider"
+        ohos:text="$string:btn_reset_slider"
         ohos:text_size="14fp"
         />
 

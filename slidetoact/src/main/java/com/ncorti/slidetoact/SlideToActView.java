@@ -480,6 +480,7 @@ public class SlideToActView extends Component
         if (isRotateIcon) {
             mArrowAngle = -180 * mPositionPerc;
             canvas.rotate(mArrowAngle, mInnerRect.centerX(), mInnerRect.centerY());
+            LogUtil.info(TAG, "mArrowAngle: " + mArrowAngle + " mPositionPerc:" + mPositionPerc);
         }
 
         mDrawableArrow.setBounds(
@@ -548,6 +549,8 @@ public class SlideToActView extends Component
             float x = touchEvent.getPointerPosition(touchEvent.getIndex()).getX();
             float y = touchEvent.getPointerPosition(touchEvent.getIndex()).getY();
 
+            LogUtil.info(TAG, "onTouchEvent method x: " + x + " y: " + y);
+
             switch (touchEvent.getAction()) {
                 case TouchEvent.PRIMARY_POINT_DOWN: {
                     if (checkInsideButton(x, y)) {
@@ -607,8 +610,7 @@ public class SlideToActView extends Component
             }
             return true;
         }
-
-        return onTouchEvent(component, touchEvent);
+        return false;
     }
 
     /**
@@ -636,11 +638,13 @@ public class SlideToActView extends Component
      * @param inc Increment to be performed (negative if it's a decrement)
      */
     private void increasePosition(int inc) {
+        LogUtil.info(TAG, "increasePosition Before mPosition: " + mPosition + " And Diff: " + inc);
         if (isReversed) {
             updatePosition(mPosition - inc);
         } else {
             updatePosition(mPosition + inc);
         }
+        LogUtil.info(TAG, "increasePosition After mPosition: " + mPosition);
         if (mPosition < 0) {
             updatePosition(0);
         }
@@ -657,8 +661,10 @@ public class SlideToActView extends Component
             mPositionPercInv = 1f;
             return;
         }
-        mPositionPerc = position / (mAreaWidth - mAreaHeight);
-        mPositionPercInv = 1 - position / (mAreaWidth - mAreaHeight);
+        mPositionPerc = position * 1f / (mAreaWidth - mAreaHeight);
+        mPositionPercInv = 1 - position * 1f / (mAreaWidth - mAreaHeight);
+
+        LogUtil.info(TAG, "UpdatePosition position: " + position + " mPositionPerc: " + mPositionPerc);
         updateEffectivePosition(mPosition);
     }
 

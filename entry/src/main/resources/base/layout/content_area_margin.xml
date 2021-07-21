@@ -23,63 +23,63 @@
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:area_margin="0"
-                ohos:text="Area Margin 0" />
+                ohos:text="$string:txt_area_margin_0" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:area_margin="4"
-                ohos:text="Area Margin 4" />
+                ohos:text="$string:txt_area_margin_4" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:area_margin="8"
-                ohos:text="Area Margin 8" />
+                ohos:text="$string:txt_area_margin_8" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:area_margin="12"
-                ohos:text="Area Margin 12" />
+                ohos:text="$string:txt_area_margin_12" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:area_margin="20"
-                ohos:text="Area Margin 20" />
+                ohos:text="$string:txt_area_margin_20" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:area_margin="24"
-                ohos:text="Area Margin 24 (default)" />
+                ohos:text="$string:txt_area_margin_24" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:area_margin="28"
-                ohos:text="Area Margin 28" />
+                ohos:text="$string:txt_area_margin_28" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:area_margin="36"
-                ohos:text="Area Margin 36" />
+                ohos:text="$string:txt_area_margin_36" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:area_margin="42"
-                ohos:text="Area Margin 42" />
+                ohos:text="$string:txt_area_margin_42" />
 
         </DirectionalLayout>
     </ScrollView>
@@ -93,7 +93,7 @@
         ohos:padding="8vp"
         ohos:background_element="$ohos:color:id_color_activated_start_dark"
         ohos:layout_alignment="horizontal_center"
-        ohos:text="Reset Slider"
+        ohos:text="$string:btn_reset_slider"
         ohos:text_size="14fp"
         />
 

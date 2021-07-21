@@ -22,28 +22,28 @@
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:outer_color="$color:md_red_A200"
-                ohos:text="Accent Red"/>
+                ohos:text="$string:txt_accent_red"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:outer_color="$color:md_purple_A200"
-                ohos:text="Accent Purple"/>
+                ohos:text="$string:txt_accent_purple"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:outer_color="$color:md_indigo_A200"
-                ohos:text="Accent Indigo"/>
+                ohos:text="$string:txt_accent_indigo"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:outer_color="$color:md_deep_orange_A200"
-                ohos:text="Accent Deep Orange"/>
+                ohos:text="$string:txt_accent_deep_orange"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
@@ -51,7 +51,7 @@
                 ohos:inner_color="$color:md_grey_800"
                 ohos:margin="6vp"
                 ohos:outer_color="$color:md_amber_A200"
-                ohos:text="Accent Amber - Grey 800"/>
+                ohos:text="$string:txt_accent_amber_grey_800"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
@@ -59,7 +59,7 @@
                 ohos:inner_color="$color:md_grey_800"
                 ohos:margin="6vp"
                 ohos:outer_color="$color:md_teal_A200"
-                ohos:text="Accent Teal - Grey 800"/>
+                ohos:text="$string:txt_accent_teal_grey_800"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
@@ -67,7 +67,7 @@
                 ohos:inner_color="$color:md_grey_800"
                 ohos:margin="6vp"
                 ohos:outer_color="$color:md_green_A200"
-                ohos:text="Accent Green - Grey 800"/>
+                ohos:text="$string:txt_accent_green_grey_800"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
@@ -75,7 +75,7 @@
                 ohos:inner_color="$color:md_white_1000"
                 ohos:margin="6vp"
                 ohos:outer_color="$color:md_grey_900"
-                ohos:text="Grey 900 - White"/>
+                ohos:text="$string:txt_grey_900_white"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
@@ -83,7 +83,7 @@
                 ohos:inner_color="$color:md_grey_900"
                 ohos:margin="6vp"
                 ohos:outer_color="$color:md_white_1000"
-                ohos:text="Grey 900 - White"/>
+                ohos:text="$string:txt_white_grey_900"/>
 
         </DirectionalLayout>
     </ScrollView>
@@ -97,7 +97,7 @@
         ohos:layout_alignment="horizontal_center"
         ohos:margin="4vp"
         ohos:padding="8vp"
-        ohos:text="Reset Slider"
+        ohos:text="$string:btn_reset_slider"
         ohos:text_size="14fp"
         />
 

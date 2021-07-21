@@ -23,7 +23,7 @@
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:slider_locked="true"
-                ohos:text="Locked Slider" />
+                ohos:text="$string:txt_locked_slider" />
 
         </DirectionalLayout>
     </ScrollView>
@@ -37,7 +37,7 @@
         ohos:layout_alignment="horizontal_center"
         ohos:margin="4vp"
         ohos:padding="8vp"
-        ohos:text="Reset Slider"
+        ohos:text="$string:btn_reset_slider"
         ohos:text_size="14fp"
         />
 

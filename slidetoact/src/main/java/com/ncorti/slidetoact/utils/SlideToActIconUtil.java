@@ -5,7 +5,6 @@ import ohos.agp.colors.RgbColor;
 import ohos.agp.components.element.VectorElement;
 import ohos.agp.render.ColorMatrix;
 import ohos.agp.utils.Color;
-import ohos.app.Context;
 
 /**
  * SlideToActIconUtil.

@@ -91,6 +91,278 @@
     {
       "name": "complete_custom_icon",
       "value": "Complete custom icon"
+    },
+    {
+      "name": "btn_reset_slider",
+      "value": "Reset Slider"
+    },
+    {
+      "name": "txt_anim_duration_2000",
+      "value": "Animation Duration 2000"
+    },
+    {
+      "name": "txt_anim_duration_1000",
+      "value": "Animation Duration 1000"
+    },
+    {
+      "name": "txt_anim_duration_500",
+      "value": "Animation Duration 500"
+    },
+    {
+      "name": "txt_anim_duration_250",
+      "value": "Animation Duration 250"
+    },
+    {
+      "name": "txt_anim_duration_125",
+      "value": "Animation Duration 125"
+    },
+    {
+      "name": "txt_anim_duration_62",
+      "value": "Animation Duration 62"
+    },
+    {
+      "name": "txt_anim_duration_0",
+      "value": "Animation Duration 0"
+    },
+    {
+      "name": "txt_area_margin_0",
+      "value": "Area Margin 0"
+    },
+    {
+      "name": "txt_area_margin_4",
+      "value": "Area Margin 4"
+    },
+    {
+      "name": "txt_area_margin_8",
+      "value": "Area Margin 8"
+    },
+    {
+      "name": "txt_area_margin_12",
+      "value": "Area Margin 12"
+    },
+    {
+      "name": "txt_area_margin_20",
+      "value": "Area Margin 20"
+    },
+    {
+      "name": "txt_area_margin_24",
+      "value": "Area Margin 24 (default)"
+    },
+    {
+      "name": "txt_area_margin_28",
+      "value": "Area Margin 28"
+    },
+    {
+      "name": "txt_area_margin_36",
+      "value": "Area Margin 36"
+    },
+    {
+      "name": "txt_area_margin_42",
+      "value": "Area Margin 42"
+    },
+    {
+      "name": "txt_border_radius_not_set",
+      "value": "Border Radius Not Set"
+    },
+    {
+      "name": "txt_border_radius_0",
+      "value": "Border Radius 0"
+    },
+    {
+      "name": "txt_border_radius_20",
+      "value": "Border Radius 20"
+    },
+    {
+      "name": "txt_border_radius_40",
+      "value": "Border Radius 40"
+    },
+    {
+      "name": "txt_border_radius_60",
+      "value": "Border Radius 60"
+    },
+    {
+      "name": "txt_border_radius_80",
+      "value": "Border Radius 80"
+    },
+    {
+      "name": "txt_border_radius_100",
+      "value": "Border Radius 100"
+    },
+    {
+      "name": "txt_border_radius_120",
+      "value": "Border Radius 120"
+    },
+    {
+      "name": "txt_border_radius_140",
+      "value": "Border Radius 140"
+    },
+    {
+      "name": "txt_icon_margin_0",
+      "value": "Icon Margin 0"
+    },
+    {
+      "name": "txt_icon_margin_4",
+      "value": "Icon Margin 4"
+    },
+    {
+      "name": "txt_icon_margin_8",
+      "value": "Icon Margin 8"
+    },
+    {
+      "name": "txt_icon_margin_16",
+      "value": "Icon Margin 16"
+    },
+    {
+      "name": "txt_icon_margin_24",
+      "value": "Icon Margin 24"
+    },
+    {
+      "name": "txt_icon_margin_28",
+      "value": "Icon Margin 28 (default)"
+    },
+    {
+      "name": "txt_icon_margin_32",
+      "value": "Icon Margin 32"
+    },
+    {
+      "name": "txt_icon_margin_36",
+      "value": "Icon Margin 36"
+    },
+    {
+      "name": "txt_icon_margin_42",
+      "value": "Icon Margin 42"
+    },
+    {
+      "name": "txt_bump_vibration_30",
+      "value": "Bump vibration 30"
+    },
+    {
+      "name": "txt_bump_vibration_50",
+      "value": "Bump vibration 50"
+    },
+    {
+      "name": "txt_bump_vibration_100",
+      "value": "Bump vibration 100"
+    },
+    {
+      "name": "txt_bump_vibration_130",
+      "value": "Bump vibration 130"
+    },
+    {
+      "name": "txt_bump_vibration_150",
+      "value": "Bump vibration 150"
+    },
+    {
+      "name": "txt_bump_vibration_200",
+      "value": "Icon Margin 200"
+    },
+    {
+      "name": "txt_accent_red",
+      "value": "Accent Red"
+    },
+    {
+      "name": "txt_accent_purple",
+      "value": "Accent Purple"
+    },
+    {
+      "name": "txt_accent_indigo",
+      "value": "Accent Indigo"
+    },
+    {
+      "name": "txt_accent_deep_orange",
+      "value": "Accent Deep Orange"
+    },
+    {
+      "name": "txt_accent_amber_grey_800",
+      "value": "Accent Amber - Grey 800"
+    },
+    {
+      "name": "txt_accent_teal_grey_800",
+      "value": "Accent Teal - Grey 800"
+    },
+    {
+      "name": "txt_accent_green_grey_800",
+      "value": "Accent Green - Grey 800"
+    },
+    {
+      "name": "txt_grey_900_white",
+      "value": "Grey 900 - White"
+    },
+    {
+      "name": "txt_white_grey_900",
+      "value": "White - Grey 900"
+    },
+    {
+      "name": "txt_custom_icon",
+      "value": "Custom Icon"
+    },
+    {
+      "name": "txt_test_me_and_read_log",
+      "value": "Test me and read the log"
+    },
+    {
+      "name": "txt_locked_slider",
+      "value": "Locked Slider"
+    },
+    {
+      "name": "txt_reversed_slider",
+      "value": "Reversed Slider"
+    },
+    {
+      "name": "txt_slider_height_90",
+      "value": "Slider Height 90"
+    },
+    {
+      "name": "txt_slider_height_120",
+      "value": "Slider Height 120"
+    },
+    {
+      "name": "txt_slider_height_140",
+      "value": "Slider Height 140"
+    },
+    {
+      "name": "txt_slider_height_160",
+      "value": "Slider Height 160"
+    },
+    {
+      "name": "txt_slider_height_180",
+      "value": "Slider Height 180"
+    },
+    {
+      "name": "txt_slider_height_200",
+      "value": "Slider Height 200"
+    },
+    {
+      "name": "txt_slider_height_240",
+      "value": "Slider Height 240"
+    },
+    {
+      "name": "txt_slider_height_260",
+      "value": "Slider Height 260"
+    },
+    {
+      "name": "txt_slider_height_300",
+      "value": "Slider Height 300"
+    },
+    {
+      "name": "txt_slider_height_340",
+      "value": "Slider Height 340"
+    },
+    {
+      "name": "txt_text_size_20",
+      "value": "TextSize 20"
+    },
+    {
+      "name": "txt_text_size_40",
+      "value": "TextSize 40"
+    },
+    {
+      "name": "txt_text_size_60",
+      "value": "TextSize 60 (default)"
+    },
+    {
+      "name": "txt_text_size_80",
+      "value": "TextSize 80"
     }
   ]
 }

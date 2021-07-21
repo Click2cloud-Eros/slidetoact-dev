@@ -22,63 +22,63 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:text="Border Radius Not Set" />
+                ohos:text="$string:txt_border_radius_not_set" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:border_radius="0"
-                ohos:text="Border Radius 0" />
+                ohos:text="$string:txt_border_radius_0" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:border_radius="20"
-                ohos:text="Border Radius 20" />
+                ohos:text="$string:txt_border_radius_20" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:border_radius="40"
-                ohos:text="Border Radius 40" />
+                ohos:text="$string:txt_border_radius_40" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:border_radius="60"
-                ohos:text="Border Radius 60" />
+                ohos:text="$string:txt_border_radius_60" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:border_radius="80"
-                ohos:text="Border Radius 80" />
+                ohos:text="$string:txt_border_radius_80" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:border_radius="100"
-                ohos:text="Border Radius 100" />
+                ohos:text="$string:txt_border_radius_100" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:border_radius="120"
-                ohos:text="Border Radius 120" />
+                ohos:text="$string:txt_border_radius_120" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:border_radius="140"
-                ohos:text="Border Radius 140" />
+                ohos:text="$string:txt_border_radius_140" />
         </DirectionalLayout>
     </ScrollView>
 
@@ -91,7 +91,7 @@
         ohos:padding="8vp"
         ohos:background_element="$ohos:color:id_color_activated_start_dark"
         ohos:layout_alignment="horizontal_center"
-        ohos:text="Reset Slider"
+        ohos:text="$string:btn_reset_slider"
         ohos:text_size="14fp"
         />
 

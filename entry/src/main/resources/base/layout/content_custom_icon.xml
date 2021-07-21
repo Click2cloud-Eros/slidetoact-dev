@@ -23,7 +23,7 @@
                 ohos:width="match_parent"
                 ohos:margin="6vp"
                 ohos:slider_icon="$graphic:custom_icon"
-                ohos:text="Custom Icon" />
+                ohos:text="$string:txt_custom_icon" />
 
             <Button
                 ohos:id="$+id:button_app_icon"
@@ -70,7 +70,7 @@
         ohos:layout_alignment="horizontal_center"
         ohos:margin="4vp"
         ohos:padding="8vp"
-        ohos:text="Reset Slider"
+        ohos:text="$string:btn_reset_slider"
         ohos:text_size="14fp"
         />
 
