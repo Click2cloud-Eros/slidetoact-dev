@@ -4,6 +4,8 @@ import com.ncorti.slidetoact.utils.AnimationUtils;
 import com.ncorti.slidetoact.utils.LogUtil;
 import com.ncorti.slidetoact.utils.SlideToActIconUtil;
 import com.ncorti.slidetoact.utils.Utils;
+import java.util.ArrayList;
+import java.util.List;
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorGroup;
 import ohos.agp.animation.AnimatorValue;
@@ -17,9 +19,9 @@ import ohos.app.Context;
 import ohos.multimodalinput.event.TouchEvent;
 import ohos.vibrator.agent.VibratorAgent;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * SlideToActView.
+ */
 public class SlideToActView extends Component
         implements
         Component.LayoutRefreshedListener,
@@ -30,127 +32,203 @@ public class SlideToActView extends Component
     private static final String TAG = SlideToActView.class.getSimpleName();
 
     /* -------------------- LAYOUT BOUNDS -------------------- */
-    private final float mDesiredSliderHeightDp = 72F;
-    private final float mDesiredSliderWidthDp = 280F;
+    private static final float DESIRED_SLIDER_HEIGHT_DP = 72F;
+    private static final float DESIRED_SLIDER_WIDTH_DP = 280F;
     private int mDesiredSliderHeight = 0;
     private int mDesiredSliderWidth = 0;
 
     /* -------------------- MEMBERS -------------------- */
-    /** Text message */
+    /**
+     * Text message.
+     */
     private CharSequence text = "";
 
-    /** Border Radius, default to mAreaHeight/2, -1 when not initialized */
+    /**
+     * Border Radius, default to mAreaHeight/2, -1 when not initialized.
+     */
     private int borderRadius = -1;
 
-    /** Outer color used by the slider (primary)*/
+    /**
+     * Outer color used by the slider (primary).
+     */
     private Color outerColor;
 
-    /** Inner color used by the slider (secondary, icon and border) */
+    /**
+     * Inner color used by the slider (secondary, icon and border).
+     */
     private Color innerColor;
 
-    /** Text color*/
+    /**
+     * Text color.
+     */
     private Color textColor;
 
-    /** Custom Icon color */
+    /**
+     * Custom Icon color.
+     */
     private Color iconColor = new Color(getContext().getColor(ResourceTable.Color_slidetoact_defaultAccent));
 
-    /** Public flag to reverse the slider by 180 degree */
+    /**
+     * Public flag to reverse the slider by 180 degree.
+     */
     private boolean isReversed = false;
 
-    /** Public flag to lock the rotation icon */
+    /**
+     * Public flag to lock the rotation icon.
+     */
     private boolean isRotateIcon = true;
 
-    /** Public flag to lock the slider */
+    /**
+     * Public flag to lock the slider.
+     */
     private boolean isLocked = false;
 
-    /** Public flag to enable complete animation */
+    /**
+     * Public flag to enable complete animation.
+     */
     private boolean isAnimateCompletion = true;
 
-    /** Private size for the text message */
+    /**
+     * Private size for the text message.
+     */
     private int textSize = 60;
 
-    /** Margin for Icon */
+    /**
+     * Margin for Icon.
+     */
     private int iconMargin = 28;
 
-    /** Margin of the cursor from the outer area */
+    /**
+     * Margin of the cursor from the outer area.
+     */
     private int originAreaMargin = 24;
 
-    /** Duration of the complete and reset animation (in milliseconds). */
+    /**
+     * Duration of the complete and reset animation (in milliseconds).
+     */
     private long animDuration = 300;
 
-    /** Duration of vibration after bumping to the end point */
+    /**
+     * Duration of vibration after bumping to the end point.
+     */
     private long bumpVibration = 0L;
 
-    /** Custom Slider Icon */
-    private int sliderIcon = ResourceTable.Graphic_slidetoact_ic_arrow;
+    /**
+     * Custom Slider Icon.
+     */
+    private VectorElement sliderIcon;
 
-    /** Custom Complete Icon */
-    private int completeIcon = ResourceTable.Graphic_slidetoact_ic_check;
+    /**
+     * Custom Complete Icon.
+     */
+    private VectorElement completeIcon;
 
     /* -------------------- REQUIRED FIELDS -------------------- */
-    /** Inner rectangle (used for arrow rotation) */
+    /**
+     * Inner rectangle (used for arrow rotation).
+     */
     private RectF mInnerRect;
 
-    /** Outer rectangle (used for area drawing) */
+    /**
+     * Outer rectangle (used for area drawing).
+     */
     private RectF mOuterRect;
 
-    /** Height of the drawing area */
+    /**
+     * Height of the drawing area.
+     */
     private int mAreaHeight = 0;
-    /** Width of the drawing area */
+    /**
+     * Width of the drawing area.
+     */
     private int mAreaWidth = 0;
-    /** Actual Width of the drawing area, used for animations */
+    /**
+     * Actual Width of the drawing area, used for animations.
+     */
     private int mActualAreaWidth = 0;
 
-    /** Current angle for Arrow Icon */
+    /**
+     * Current angle for Arrow Icon.
+     */
     private float mArrowAngle = 0f;
 
-    /** Arrow vector element */
+    /**
+     * Arrow vector element.
+     */
     private VectorElement mDrawableArrow;
 
-    /** Tick vector element*/
+    /**
+     * Tick vector element.
+     */
     private VectorElement mDrawableTick;
 
     private boolean mFlagDrawTick = false;
 
-    /** Margin for Arrow Icon */
+    /**
+     * Margin for Arrow Icon.
+     */
     private int mArrowMargin;
 
-    /** Margin for Tick Icon */
+    /**
+     * Margin for Tick Icon.
+     */
     private int mTickMargin;
 
-    /** Slider cursor effective position. This is used to handle the `reversed` scenario. */
+    /**
+     * Slider cursor effective position. This is used to handle the `reversed` scenario.
+     */
     private int mEffectivePosition = 0;
 
-    /** Slider cursor position (between 0 and (`mAreaWidth - mAreaHeight)) */
+    /**
+     * Slider cursor position (between 0 and (`mAreaWidth - mAreaHeight)).
+     */
     private int mPosition = 0;
 
-    /** Slider cursor position in percentage (between 0f and 1f) */
+    /**
+     * Slider cursor position in percentage (between 0f and 1f).
+     */
     private float mPositionPerc = 0f;
 
-    /** 1/mPositionPerc */
+    /**
+     * 1/mPositionPerc.
+     */
     private float mPositionPercInv = 1f;
 
-    /** Grace value, when mPositionPerc > mGraceValue slider will perform the 'complete' operations */
+    /**
+     * Grace value, when mPositionPerc > mGraceValue slider will perform the 'complete' operations.
+     */
     private float mGraceValue = 0.8F;
 
-    /** Positioning of text */
-    private float mTextYPosition = -1f;
-    private float mTextXPosition = -1f;
+    /**
+     * Positioning of text.
+     */
+    private float mTextYposition = -1f;
+    private float mTextXposition = -1f;
 
-    /** Flag to understand if user is moving the slider cursor */
+    /**
+     * Flag to understand if user is moving the slider cursor.
+     */
     private boolean mFlagMoving = false;
 
-    /** Last X coordinate for the touch event */
+    /**
+     * Last X coordinate for the touch event.
+     */
     private float mLastX = 0F;
 
-    /** Private flag to check if the slide gesture have been completed */
+    /**
+     * Private flag to check if the slide gesture have been completed.
+     */
     private boolean mIsCompleted = false;
 
-    /** Margin of the cursor from the outer area */
+    /**
+     * Margin of the cursor from the outer area.
+     */
     private int mActualAreaMargin;
 
     /* -------------------- Interfaces -------------------- */
-    /** Public Slide event listeners */
+    /**
+     * Public Slide event listeners.
+     */
     private OnSlideToActAnimationEventListener onSlideToActAnimationEventListener = null;
     private OnSlideCompleteListener onSlideCompleteListener = null;
     private OnSlideResetListener onSlideResetListener = null;
@@ -182,10 +260,11 @@ public class SlideToActView extends Component
         Color defaultOuter = new Color(getContext().getColor(ResourceTable.Color_slidetoact_defaultAccent));
         Color defaultWhite = new Color(getContext().getColor(ResourceTable.Color_slidetoact_white));
 
-        mDesiredSliderHeight = Utils.dp2px(mDesiredSliderHeightDp);
-        mDesiredSliderWidth = Utils.dp2px(mDesiredSliderWidthDp);
+        mDesiredSliderHeight = Utils.dp2px(DESIRED_SLIDER_HEIGHT_DP);
+        mDesiredSliderWidth = Utils.dp2px(DESIRED_SLIDER_WIDTH_DP);
 
-        LogUtil.info(TAG, "Init method mDesiredSliderHeight: " + mDesiredSliderHeight + " mDesiredSliderWidth: " + mDesiredSliderWidth);
+        LogUtil.info(TAG, "Init method mDesiredSliderHeight: " + mDesiredSliderHeight
+                + " mDesiredSliderWidth: " + mDesiredSliderWidth);
 
         if (attrSet != null) {
             mDesiredSliderHeight = attrSet.getAttr(Attribute.SLIDER_HEIGHT).isPresent()
@@ -243,8 +322,8 @@ public class SlideToActView extends Component
                     : 24;
 
             sliderIcon = attrSet.getAttr(Attribute.SLIDER_ICON).isPresent()
-                    ? attrSet.getAttr(Attribute.SLIDER_ICON).get().getIntegerValue()
-                    : ResourceTable.Graphic_slidetoact_ic_arrow;
+                    ? (VectorElement) attrSet.getAttr(Attribute.SLIDER_ICON).get().getElement()
+                    : new VectorElement(getContext(), ResourceTable.Graphic_slidetoact_ic_arrow);
 
             // For icon color. check if the `slide_icon_color` is set.
             // if not the `outer_color` is set.
@@ -253,8 +332,8 @@ public class SlideToActView extends Component
                     : outerColor;
 
             completeIcon = attrSet.getAttr(Attribute.COMPLETE_ICON).isPresent()
-                    ? attrSet.getAttr(Attribute.COMPLETE_ICON).get().getIntegerValue()
-                    : ResourceTable.Graphic_slidetoact_ic_check;
+                    ? (VectorElement) attrSet.getAttr(Attribute.COMPLETE_ICON).get().getElement()
+                    : new VectorElement(getContext(), ResourceTable.Graphic_slidetoact_ic_check);
 
             iconMargin = attrSet.getAttr(Attribute.ICON_MARGIN).isPresent()
                     ? attrSet.getAttr(Attribute.ICON_MARGIN).get().getIntegerValue()
@@ -266,8 +345,10 @@ public class SlideToActView extends Component
 
         mActualAreaMargin = originAreaMargin;
 
-        mDrawableArrow = SlideToActIconUtil.loadIconCompat(getContext(), sliderIcon);
-        mDrawableTick = SlideToActIconUtil.loadIconCompat(getContext(), completeIcon);
+        mDrawableArrow = sliderIcon;
+        mDrawableTick = completeIcon;
+
+        SlideToActIconUtil.tintIconCompat(mDrawableArrow, iconColor);
 
         mOuterRect = new RectF(
                 mActualAreaWidth,
@@ -335,7 +416,9 @@ public class SlideToActView extends Component
     @Override
     public void onDraw(Component component, Canvas canvas) {
         LogUtil.info(TAG, "onDraw method called");
-        if (canvas == null) return;
+        if (canvas == null) {
+            return;
+        }
 
         //Draw outer area
         mOuterRect.set(
@@ -361,8 +444,8 @@ public class SlideToActView extends Component
         canvas.drawText(
                 mTextPaint,
                 textToDraw,
-                mTextXPosition,
-                mTextYPosition
+                mTextXposition,
+                mTextYposition
         );
 
         //draw inner view
@@ -406,8 +489,8 @@ public class SlideToActView extends Component
                 (int) mInnerRect.bottom - mArrowMargin
         );
 
-        if (mDrawableArrow.getBounds().left <= mDrawableArrow.getBounds().right &&
-                mDrawableArrow.getBounds().top <= mDrawableArrow.getBounds().bottom
+        if (mDrawableArrow.getBounds().left <= mDrawableArrow.getBounds().right
+                && mDrawableArrow.getBounds().top <= mDrawableArrow.getBounds().bottom
         ) {
             mDrawableArrow.drawToCanvas(canvas);
         }
@@ -420,6 +503,14 @@ public class SlideToActView extends Component
                 mAreaWidth - mTickMargin - mActualAreaWidth,
                 mAreaHeight - mTickMargin
         );
+
+        SlideToActIconUtil.tintIconCompat(mDrawableTick, innerColor);
+
+        LogUtil.info(TAG, "mFlagDrawTick: " + mFlagDrawTick
+                + " mActualAreaWidth: " + mActualAreaWidth
+                + " mTickMargin: " + mTickMargin
+                + " mAreaWidth: " + mAreaWidth
+                + " mAreaHeight: " + mAreaHeight);
 
         if (mFlagDrawTick) {
             mDrawableTick.drawToCanvas(canvas);
@@ -442,19 +533,17 @@ public class SlideToActView extends Component
         }
 
         // Text horizontal/vertical positioning (both centered)
-        mTextXPosition = mAreaWidth / 3.0f;
-        mTextYPosition = (mAreaHeight / 2.0f)
+        mTextXposition = mAreaWidth / 3.0f;
+        mTextYposition = (mAreaHeight / 2.0f)
                 - (mTextPaint.descent() + mTextPaint.ascent()) / 2;
 
         invalidate();
         // Make sure the position is recomputed.
-            updatePosition(0);
+        updatePosition(0);
     }
 
     @Override
     public boolean onTouchEvent(Component component, TouchEvent touchEvent) {
-        LogUtil.info(TAG, "onTouchEvent method called");
-
         if (touchEvent != null && isEnabled()) {
             float x = touchEvent.getPointerPosition(touchEvent.getIndex()).getX();
             float y = touchEvent.getPointerPosition(touchEvent.getIndex()).getY();
@@ -464,7 +553,6 @@ public class SlideToActView extends Component
                     if (checkInsideButton(x, y)) {
                         mFlagMoving = true;
                         mLastX = x;
-                        //    getComponentParent().requestDisallowInterceptTouchEvent(true);
                     } else {
                         // Clicking outside the area -> User failed, notify the listener.
                         if (onSlideUserFailedListener != null) {
@@ -474,19 +562,15 @@ public class SlideToActView extends Component
                 }
                 break;
                 case TouchEvent.PRIMARY_POINT_UP: {
-                    //    getComponentParent().requestDisallowInterceptTouchEvent(false);
-                    if ((mPosition > 0 && isLocked) ||
-                            (mPosition > 0 && mPositionPerc < mGraceValue)
+                    if ((mPosition > 0 && isLocked)
+                            || (mPosition > 0 && mPositionPerc < mGraceValue)
                     ) {
                         // Check for grace value
                         AnimatorValue positionAnimator = new AnimatorValue();
                         positionAnimator.setDuration(animDuration);
-                        positionAnimator.setValueUpdateListener(new AnimatorValue.ValueUpdateListener() {
-                            @Override
-                            public void onUpdate(AnimatorValue animatorValue, float v) {
-                                updatePosition((int) v);
-                                invalidate();
-                            }
+                        positionAnimator.setValueUpdateListener((animatorValue, v) -> {
+                            updatePosition((int) v);
+                            invalidate();
                         });
                         positionAnimator.start();
                     } else if (mPosition > 0 && mPositionPerc >= mGraceValue) {
@@ -528,7 +612,8 @@ public class SlideToActView extends Component
     }
 
     /**
-     * Private method to check if user has touched the slider cursor
+     * Private method to check if user has touched the slider cursor.
+     *
      * @param x The x coordinate of the touch event
      * @param y The y coordinate of the touch event
      * @return A boolean that informs if user has pressed or not
@@ -539,14 +624,14 @@ public class SlideToActView extends Component
                         && y < mAreaHeight
                         && mEffectivePosition < x
                         && x < (mAreaHeight + mEffectivePosition)
-        );
+            );
     }
 
     /**
      * Private method for increasing/decreasing the position
      * Ensure that position never exits from its range [0, (mAreaWidth - mAreaHeight)].
      *
-     * Please note that the increment is inverted in case of a reversed slider.
+     * <p>Please note that the increment is inverted in case of a reversed slider.
      *
      * @param inc Increment to be performed (negative if it's a decrement)
      */
@@ -586,7 +671,7 @@ public class SlideToActView extends Component
     }
 
     /**
-     * Private method that is performed when user completes the slide
+     * Private method that is performed when user completes the slide.
      */
     private void startAnimationComplete() {
         AnimatorGroup animSet = new AnimatorGroup();
@@ -602,7 +687,10 @@ public class SlideToActView extends Component
         // Animator that bounce away the cursors
         AnimatorValue marginAnimator = new AnimatorValue();
         marginAnimator.setValueUpdateListener((animatorValue, v) -> {
-            float value = AnimationUtils.getAnimatedValue(v, mActualAreaMargin, (int) ((mInnerRect.width() / 2) + mActualAreaMargin));
+            float value = AnimationUtils.getAnimatedValue(
+                    v,
+                    mActualAreaMargin,
+                    (int) ((mInnerRect.width() / 2) + mActualAreaMargin));
             mActualAreaMargin = (int) value;
             invalidate();
         });
@@ -611,19 +699,26 @@ public class SlideToActView extends Component
         // Animator that reduces the outer area (to right)
         AnimatorValue areaAnimator = new AnimatorValue();
         areaAnimator.setValueUpdateListener((animatorValue, v) -> {
-            float value = AnimationUtils.getAnimatedValue(v,0, (mAreaWidth - mAreaHeight) / 2);
+            float value = AnimationUtils.getAnimatedValue(v, 0, (mAreaWidth - mAreaHeight) / 2);
             mActualAreaWidth = (int) value;
             invalidate();
         });
 
+        final boolean[] startedOnce = {false};
         AnimatorValue.ValueUpdateListener tickListener = (animatorValue, v) -> {
             if (!mFlagDrawTick) {
+                LogUtil.info(TAG, "Tick listner call from SlideToActView");
                 mFlagDrawTick = true;
                 mTickMargin = iconMargin;
             }
+
+            if (!startedOnce[0]) {
+                invalidate();
+                startedOnce[0] = true;
+            }
         };
 
-        AnimatorValue tickAnimator = SlideToActIconUtil.createIconAnimator(this, mDrawableTick, tickListener);
+        AnimatorValue tickAnimator = SlideToActIconUtil.createIconAnimator(tickListener);
 
         List<Animator> animators = new ArrayList<>();
         if (mPosition < mAreaWidth - mAreaHeight) {
@@ -644,23 +739,24 @@ public class SlideToActView extends Component
             @Override
             public void onStart(Animator animator) {
                 if (onSlideToActAnimationEventListener != null) {
-                    onSlideToActAnimationEventListener.onSlideCompleteAnimationStarted(SlideToActView.this, mPositionPerc);
+                    onSlideToActAnimationEventListener
+                            .onSlideCompleteAnimationStarted(SlideToActView.this, mPositionPerc);
                 }
             }
 
             @Override
             public void onStop(Animator animator) {
-
+                // Do nothing
             }
 
             @Override
             public void onCancel(Animator animator) {
-
+                // Do nothing
             }
 
             @Override
             public void onEnd(Animator animator) {
-                mIsCompleted =true;
+                mIsCompleted = true;
                 if (onSlideToActAnimationEventListener != null) {
                     onSlideToActAnimationEventListener.onSlideCompleteAnimationEnded(SlideToActView.this);
                 }
@@ -672,19 +768,19 @@ public class SlideToActView extends Component
 
             @Override
             public void onPause(Animator animator) {
-
+                // Do nothing
             }
 
             @Override
             public void onResume(Animator animator) {
-
+                // Do nothing
             }
         });
         animSet.start();
     }
 
     /**
-     * Private method that is performed when you want to reset the cursor
+     * Private method that is performed when you want to reset the cursor.
      */
     private void startAnimationReset() {
         mIsCompleted = false;
@@ -693,15 +789,14 @@ public class SlideToActView extends Component
         // Animator that reduces the tick size
         AnimatorValue tickAnimator = new AnimatorValue();
         tickAnimator.setValueUpdateListener((animatorValue, v) -> {
-            float value = AnimationUtils.getAnimatedValue(v,mTickMargin, mAreaWidth / 2);
-            mTickMargin = (int) value;
+            mTickMargin = (int) v;
             invalidate();
         });
 
         // Animator that enlarges the outer area
         AnimatorValue areaAnimator = new AnimatorValue();
         areaAnimator.setValueUpdateListener((animatorValue, v) -> {
-            float value = AnimationUtils.getAnimatedValue(v,mActualAreaWidth, 0);
+            float value = AnimationUtils.getAnimatedValue(v, mActualAreaWidth, 0);
             // Now we can hide the tick till the next complete
             mFlagDrawTick = false;
             mActualAreaWidth = (int) value;
@@ -710,7 +805,7 @@ public class SlideToActView extends Component
 
         AnimatorValue positionAnimator = new AnimatorValue();
         positionAnimator.setValueUpdateListener((animatorValue, v) -> {
-            float value = AnimationUtils.getAnimatedValue(v,mPosition, 0);
+            float value = AnimationUtils.getAnimatedValue(v, mPosition, 0);
             updatePosition((int) value);
             invalidate();
         });
@@ -718,7 +813,7 @@ public class SlideToActView extends Component
         // Animator that re-draw the cursors
         AnimatorValue marginAnimator = new AnimatorValue();
         marginAnimator.setValueUpdateListener((animatorValue, v) -> {
-            float value = AnimationUtils.getAnimatedValue(v,mActualAreaMargin, originAreaMargin);
+            float value = AnimationUtils.getAnimatedValue(v, mActualAreaMargin, originAreaMargin);
             mActualAreaMargin = (int) value;
             invalidate();
         });
@@ -727,7 +822,7 @@ public class SlideToActView extends Component
         // Animator that makes the arrow appear
         AnimatorValue arrowAnimator = new AnimatorValue();
         arrowAnimator.setValueUpdateListener((animatorValue, v) -> {
-            float value = AnimationUtils.getAnimatedValue(v,mArrowMargin, iconMargin);
+            float value = AnimationUtils.getAnimatedValue(v, mArrowMargin, iconMargin);
             mArrowMargin = (int) value;
             invalidate();
         });
@@ -757,12 +852,12 @@ public class SlideToActView extends Component
 
             @Override
             public void onStop(Animator animator) {
-
+                // Do nothing
             }
 
             @Override
             public void onCancel(Animator animator) {
-
+                // Do nothing
             }
 
             @Override
@@ -780,12 +875,12 @@ public class SlideToActView extends Component
 
             @Override
             public void onPause(Animator animator) {
-
+                // Do nothing
             }
 
             @Override
             public void onResume(Animator animator) {
-
+                // Do nothing
             }
         });
         animSet.start();
@@ -796,14 +891,16 @@ public class SlideToActView extends Component
      * it's path.
      */
     private void handleVibration() {
-        if (bumpVibration <= 0) return;
+        if (bumpVibration <= 0) {
+            return;
+        }
 
         VibratorAgent vibrator = new VibratorAgent();
         vibrator.startOnce((int) bumpVibration);
     }
 
     /**
-     * Method that reset the slider
+     * Method that reset the slider.
      */
     public void resetSlider() {
         if (mIsCompleted) {
@@ -951,23 +1048,25 @@ public class SlideToActView extends Component
         this.bumpVibration = bumpVibration;
     }
 
-    public int getSliderIcon() {
+    public VectorElement getSliderIcon() {
         return sliderIcon;
     }
 
-    public void setSliderIcon(int sliderIcon) {
+    public void setSliderIcon(VectorElement sliderIcon) {
         this.sliderIcon = sliderIcon;
-        mDrawableArrow = SlideToActIconUtil.loadIconCompat(getContext(), sliderIcon);
+        mDrawableArrow = sliderIcon;
+        SlideToActIconUtil.tintIconCompat(mDrawableArrow, iconColor);
         invalidate();
     }
 
-    public int getCompleteIcon() {
+    public VectorElement getCompleteIcon() {
         return completeIcon;
     }
 
-    public void setCompleteIcon(int completeIcon) {
+    public void setCompleteIcon(VectorElement completeIcon) {
         this.completeIcon = completeIcon;
-        mDrawableTick = SlideToActIconUtil.loadIconCompat(getContext(), completeIcon);
+        mDrawableTick = completeIcon;
+        SlideToActIconUtil.tintIconCompat(mDrawableTick, iconColor);
         invalidate();
     }
 
@@ -975,7 +1074,8 @@ public class SlideToActView extends Component
         this.onSlideCompleteListener = onSlideCompleteListener;
     }
 
-    public void setOnSlideToActAnimationEventListener(OnSlideToActAnimationEventListener onSlideToActAnimationEventListener) {
+    public void setOnSlideToActAnimationEventListener(
+            OnSlideToActAnimationEventListener onSlideToActAnimationEventListener) {
         this.onSlideToActAnimationEventListener = onSlideToActAnimationEventListener;
     }
 
@@ -998,7 +1098,7 @@ public class SlideToActView extends Component
          * Called when the slide complete animation start. You can perform actions during the
          * complete animations.
          *
-         * @param view The SlideToActView who created the event
+         * @param view      The SlideToActView who created the event
          * @param threshold The mPosition (in percentage [0f,1f]) where the user has left the cursor
          */
         void onSlideCompleteAnimationStarted(SlideToActView view, float threshold);
@@ -1034,7 +1134,8 @@ public class SlideToActView extends Component
      */
     public interface OnSlideCompleteListener {
         /**
-         * Called when user performed the slide
+         * Called when user performed the slide.
+         *
          * @param view The SlideToActView who created the event
          */
         void onSlideComplete(SlideToActView view);
@@ -1046,7 +1147,8 @@ public class SlideToActView extends Component
      */
     public interface OnSlideResetListener {
         /**
-         * Called when slides is again available
+         * Called when slides is again available.
+         *
          * @param view The SlideToActView who created the event
          */
         void onSlideReset(SlideToActView view);
@@ -1057,15 +1159,16 @@ public class SlideToActView extends Component
      * You can subscribe to this event to get notified when the user is wrongly
      * interacting with the widget to eventually educate it:
      *
-     * - The user clicked outside of the cursor
+     * <p>- The user clicked outside of the cursor
      * - The user slided but left when the cursor was back to zero
      *
-     * You can use this listener to show a Toast or other messages.
+     * <p>You can use this listener to show a Toast or other messages.
      */
     public interface OnSlideUserFailedListener {
         /**
-         * Called when user failed to interact with the slider slide
-         * @param view The SlideToActView who created the event
+         * Called when user failed to interact with the slider slide.
+         *
+         * @param view      The SlideToActView who created the event
          * @param isOutside True if user pressed outside the cursor
          */
         void onSlideFailed(SlideToActView view, boolean isOutside);

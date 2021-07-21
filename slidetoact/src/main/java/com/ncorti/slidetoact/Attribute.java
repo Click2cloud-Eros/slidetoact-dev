@@ -1,5 +1,8 @@
 package com.ncorti.slidetoact;
 
+/**
+ * SlideToActView Attributes.
+ */
 public class Attribute {
 
     private Attribute() {}

@@ -19,7 +19,7 @@ import ohos.hiviewdfx.HiLog;
 import ohos.hiviewdfx.HiLogLabel;
 
 /**
- * Log Util
+ * Log Util.
  *
  * @since 2021-01-11
  */
@@ -31,10 +31,11 @@ public class LogUtil {
     private static final String LOG_FORMAT = "%{public}s: %{public}s";
 
     private LogUtil() {
+        throw new IllegalStateException("Utility class");
     }
 
     /**
-     * Print info log
+     * Print info log.
      *
      * @param tag log tag
      * @param msg log message
@@ -44,7 +45,7 @@ public class LogUtil {
     }
 
     /**
-     * Print info log
+     * Print info log.
      *
      * @param tag log tag
      * @param msg log message

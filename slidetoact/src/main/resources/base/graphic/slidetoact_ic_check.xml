@@ -5,9 +5,6 @@
     ohos:viewportHeight="24.0"
     ohos:viewportWidth="24.0">
     <path
-        ohos:name="check"
-        ohos:fillColor="#00000000"
-        ohos:pathData="m7.21,25.35l10.3,10.37l23.29,-23.43"
-        ohos:strokeColor="$color:slidetoact_white"
-        ohos:strokeWidth="3.5"/>
+        ohos:fillColor="#FF000000"
+        ohos:pathData="M9,16.17L4.83,12l-1.42,1.41L9,19 21,7l-1.41,-1.41z"/>
 </vector>

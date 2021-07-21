@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<DependentLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:height="match_parent"
-    ohos:width="match_parent"
-    ohos:orientation="vertical">
+    ohos:width="match_parent">
 
-    <DirectionalLayout
-        ohos:id="$+id:slide_container"
+    <ScrollView
+        ohos:height="match_parent"
         ohos:width="match_parent"
-        ohos:height="match_content"
-        ohos:orientation="vertical">
+        ohos:above="$id:btn_reset_slider"
+        ohos:orientation="vertical"
+        ohos:padding="8vp">
 
-        <com.ncorti.slidetoact.SlideToActView
-            ohos:id="$+id:slide_locked"
-            ohos:height="match_content"
+        <DirectionalLayout
+            ohos:id="$+id:slide_container"
             ohos:width="match_parent"
-            ohos:margin="6vp"
-            ohos:slider_locked="true"
-            ohos:text="Locked Slider" />
+            ohos:height="match_content"
+            ohos:orientation="vertical">
 
-    </DirectionalLayout>
-</ScrollView>
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:id="$+id:slide_locked"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:slider_locked="true"
+                ohos:text="Locked Slider" />
+
+        </DirectionalLayout>
+    </ScrollView>
+
+    <Button
+        ohos:id="$+id:btn_reset_slider"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:align_parent_bottom="true"
+        ohos:background_element="$ohos:color:id_color_activated_start_dark"
+        ohos:layout_alignment="horizontal_center"
+        ohos:margin="4vp"
+        ohos:padding="8vp"
+        ohos:text="Reset Slider"
+        ohos:text_size="14fp"
+        />
+
+</DependentLayout>

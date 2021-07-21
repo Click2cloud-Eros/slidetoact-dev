@@ -2,17 +2,20 @@ package com.ncorti.slidetoact.example.slice;
 
 import com.ncorti.slidetoact.SlideToActView;
 import com.ncorti.slidetoact.example.ResourceTable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.Component;
 import ohos.agp.components.DirectionalLayout;
 import ohos.agp.components.Text;
+import ohos.agp.components.element.VectorElement;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
+/**
+ * SampleAbilitySlice.
+ */
 public class SampleAbilitySlice extends AbilitySlice {
 
     public static final String EXTRA_PRESSED_BUTTON = "extra_pressed_button";
@@ -57,22 +60,20 @@ public class SampleAbilitySlice extends AbilitySlice {
             case ResourceTable.Id_button_custom_icon:
                 super.setUIContent(ResourceTable.Layout_content_custom_icon);
                 final SlideToActView slider = (SlideToActView) findComponentById(ResourceTable.Id_slide_custom_icon);
-                Component.ClickedListener listener = new Component.ClickedListener() {
-                    @Override
-                    public void onClick(Component component) {
-                        switch (component.getId()) {
-                            case ResourceTable.Id_button_app_icon:
-                                slider.setSliderIcon(ResourceTable.Graphic_ic_android);
-                                break;
-                            case ResourceTable.Id_button_cloud_icon:
-                                slider.setSliderIcon(ResourceTable.Graphic_ic_cloud);
-                                break;
-                            case ResourceTable.Id_button_complete_icon:
-                                slider.setCompleteIcon(ResourceTable.Graphic_custom_icon);
-                                break;
-                            default:
-                                break;
-                        }
+                Component.ClickedListener listener = component -> {
+                    switch (component.getId()) {
+                        case ResourceTable.Id_button_app_icon:
+                            slider.setSliderIcon(new VectorElement(getContext(), ResourceTable.Graphic_ic_android));
+                            break;
+                        case ResourceTable.Id_button_cloud_icon:
+                            slider.setSliderIcon(new VectorElement(getContext(), ResourceTable.Graphic_ic_cloud));
+                            slider.setRotateIcon(false);
+                            break;
+                        case ResourceTable.Id_button_complete_icon:
+                            slider.setCompleteIcon(new VectorElement(getContext(), ResourceTable.Graphic_custom_icon));
+                            break;
+                        default:
+                            break;
                     }
                 };
 
@@ -95,12 +96,9 @@ public class SampleAbilitySlice extends AbilitySlice {
         mSlideList = getSlideList();
 
         findComponentById(ResourceTable.Id_btn_reset_slider)
-                .setClickedListener(new Component.ClickedListener() {
-                    @Override
-                    public void onClick(Component component) {
-                        for (SlideToActView slide : mSlideList) {
-                            slide.resetSlider();
-                        }
+                .setClickedListener(component -> {
+                    for (SlideToActView slide : mSlideList) {
+                        slide.resetSlider();
                     }
                 });
     }
@@ -135,7 +133,8 @@ public class SampleAbilitySlice extends AbilitySlice {
 
         slide.setOnSlideResetListener(view -> log.append("\n" + getTime() + " onSlideReset"));
 
-        slide.setOnSlideUserFailedListener((view, isOutside) -> log.append("\n" + getTime() + " onSlideUserFailed - Clicked outside: " + isOutside));
+        slide.setOnSlideUserFailedListener((view, isOutside) ->
+                log.append("\n" + getTime() + " onSlideUserFailed - Clicked outside: " + isOutside));
 
         slide.setOnSlideToActAnimationEventListener(new SlideToActView.OnSlideToActAnimationEventListener() {
             @Override

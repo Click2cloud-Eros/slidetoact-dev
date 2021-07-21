@@ -1,42 +1,57 @@
 package com.ncorti.slidetoact.utils;
 
-import com.ncorti.slidetoact.SlideToActView;
 import ohos.agp.animation.AnimatorValue;
-import ohos.agp.components.element.Element;
+import ohos.agp.colors.RgbColor;
 import ohos.agp.components.element.VectorElement;
+import ohos.agp.render.ColorMatrix;
 import ohos.agp.utils.Color;
 import ohos.app.Context;
 
+/**
+ * SlideToActIconUtil.
+ */
 public class SlideToActIconUtil {
 
-    public static VectorElement loadIconCompat(Context context, int value) {
-        return new VectorElement(context, value);
+    private SlideToActIconUtil() {
+        throw new IllegalStateException("Utility class");
     }
 
-    public static void tintIconCompat(Element icon, Color color) {
+    /**
+     * Change icon color using color matrix.
+     *
+     * @param icon instance of VectorElement.
+     * @param color target color.
+     */
+    public static void tintIconCompat(VectorElement icon, Color color) {
+        RgbColor rgbColor = RgbColor.fromArgbInt(color.getValue());
+        float r = rgbColor.getRed() / 255.0f;
+        float g = rgbColor.getGreen() / 255.0f;
+        float b = rgbColor.getBlue() / 255.0f;
 
+        float[] matrix = {
+            r, r, r, r, r, //red
+            g, g, g, g, g, //green
+            b, b, b, b, b, //blue
+            1, 1, 1, 1, 1 //alpha
+        };
+
+        ColorMatrix colorMatrix = new ColorMatrix();
+        colorMatrix.setMatrix(matrix);
+
+        icon.setColorMatrix(colorMatrix);
     }
 
     /**
      * Creates a [ValueAnimator] to animate the complete icon. Uses the [fallbackToFadeAnimation]
      * to decide if the icon should be animated with a Fade or with using [AnimatedVectorDrawable].
+     *
+     * @param listener animator value update listner.
      */
     public static AnimatorValue createIconAnimator(
-            SlideToActView view,
-            VectorElement icon,
             AnimatorValue.ValueUpdateListener listener
     ) {
-        //val tickAnimator = ValueAnimator.ofInt(0, 255)
         AnimatorValue tickAnimator = new AnimatorValue();
         tickAnimator.setValueUpdateListener(listener);
-        tickAnimator.setValueUpdateListener(new AnimatorValue.ValueUpdateListener() {
-            @Override
-            public void onUpdate(AnimatorValue animatorValue, float v) {
-                float value = AnimationUtils.getAnimatedColor(v,0, 255);
-                icon.setAlpha((int) value);
-                view.invalidate();
-            }
-        });
         return tickAnimator;
     }
 }

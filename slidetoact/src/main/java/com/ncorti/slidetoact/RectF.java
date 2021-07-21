@@ -4,27 +4,27 @@ import ohos.agp.utils.RectFloat;
 import ohos.media.image.common.Rect;
 
 /**
- * RectF class
+ * RectF class.
  */
 public class RectF extends RectFloat {
     /**
-     * default constant
+     * default constant.
      **/
     public static final float DEFAULT_VAL_POINT_FIVE = 0.5f;
 
     /**
-     * Default constructor for RectF
+     * Default constructor for RectF.
      */
     public RectF() {
         super();
     }
 
     /**
-     * * Parameterised constructor for RectF
+     * * Parameterised constructor for RectF.
      *
-     * @param left left
-     * @param top top
-     * @param right right
+     * @param left   left
+     * @param top    top
+     * @param right  right
      * @param bottom bottom
      */
     public RectF(float left, float top, float right, float bottom) {
@@ -32,7 +32,7 @@ public class RectF extends RectFloat {
     }
 
     /**
-     * * calculate center X
+     * * calculate center X.
      *
      * @return centerX
      */
@@ -41,7 +41,7 @@ public class RectF extends RectFloat {
     }
 
     /**
-     * * calculate center Y
+     * * calculate center Y.
      *
      * @return centerY
      */
@@ -50,7 +50,7 @@ public class RectF extends RectFloat {
     }
 
     /**
-     * * calculates width
+     * * calculates width.
      *
      * @return width
      */
@@ -59,7 +59,7 @@ public class RectF extends RectFloat {
     }
 
     /**
-     * * calculates height
+     * * calculates height.
      *
      * @return height
      */
@@ -68,7 +68,7 @@ public class RectF extends RectFloat {
     }
 
     /**
-     * * set RectF coordinates
+     * * set RectF coordinates.
      *
      * @param src src
      */
@@ -83,7 +83,7 @@ public class RectF extends RectFloat {
     }
 
     /**
-     * * inset
+     * inset.
      *
      * @param dxValue dx
      * @param dyValue dy
@@ -96,7 +96,7 @@ public class RectF extends RectFloat {
     }
 
     /**
-     * * roundOut
+     * roundOut.
      *
      * @param dst dst
      */
