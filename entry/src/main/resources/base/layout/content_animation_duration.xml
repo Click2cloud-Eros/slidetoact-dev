@@ -21,49 +21,49 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:animation_duration="2000"
+                ohos:animationDuration="2000"
                 ohos:text="$string:txt_anim_duration_2000" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:animation_duration="1000"
+                ohos:animationDuration="1000"
                 ohos:text="$string:txt_anim_duration_1000" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:animation_duration="500"
+                ohos:animationDuration="500"
                 ohos:text="$string:txt_anim_duration_500" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:animation_duration="250"
+                ohos:animationDuration="250"
                 ohos:text="$string:txt_anim_duration_250" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:animation_duration="125"
+                ohos:animationDuration="125"
                 ohos:text="$string:txt_anim_duration_125" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:animation_duration="62"
+                ohos:animationDuration="62"
                 ohos:text="$string:txt_anim_duration_62" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:animation_duration="0"
+                ohos:animationDuration="0"
                 ohos:text="$string:txt_anim_duration_0" />
         </DirectionalLayout>
 

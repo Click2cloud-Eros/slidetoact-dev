@@ -22,7 +22,7 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:slider_locked="true"
+                ohos:sliderLocked="true"
                 ohos:text="$string:txt_locked_slider" />
 
         </DirectionalLayout>

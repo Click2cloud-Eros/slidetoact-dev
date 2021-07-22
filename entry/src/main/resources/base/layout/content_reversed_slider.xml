@@ -23,7 +23,7 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:slider_reversed="true"
+                ohos:sliderReversed="true"
                 ohos:text="$string:txt_reversed_slider" />
 
         </DirectionalLayout>

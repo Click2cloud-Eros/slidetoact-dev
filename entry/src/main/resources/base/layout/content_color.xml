@@ -21,68 +21,68 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:outer_color="$color:md_red_A200"
+                ohos:outerColor="$color:md_red_A200"
                 ohos:text="$string:txt_accent_red"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:outer_color="$color:md_purple_A200"
+                ohos:outerColor="$color:md_purple_A200"
                 ohos:text="$string:txt_accent_purple"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:outer_color="$color:md_indigo_A200"
+                ohos:outerColor="$color:md_indigo_A200"
                 ohos:text="$string:txt_accent_indigo"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:outer_color="$color:md_deep_orange_A200"
+                ohos:outerColor="$color:md_deep_orange_A200"
                 ohos:text="$string:txt_accent_deep_orange"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
-                ohos:inner_color="$color:md_grey_800"
+                ohos:innerColor="$color:md_grey_800"
                 ohos:margin="6vp"
-                ohos:outer_color="$color:md_amber_A200"
+                ohos:outerColor="$color:md_amber_A200"
                 ohos:text="$string:txt_accent_amber_grey_800"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
-                ohos:inner_color="$color:md_grey_800"
+                ohos:innerColor="$color:md_grey_800"
                 ohos:margin="6vp"
-                ohos:outer_color="$color:md_teal_A200"
+                ohos:outerColor="$color:md_teal_A200"
                 ohos:text="$string:txt_accent_teal_grey_800"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
-                ohos:inner_color="$color:md_grey_800"
+                ohos:innerColor="$color:md_grey_800"
                 ohos:margin="6vp"
-                ohos:outer_color="$color:md_green_A200"
+                ohos:outerColor="$color:md_green_A200"
                 ohos:text="$string:txt_accent_green_grey_800"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
-                ohos:inner_color="$color:md_white_1000"
+                ohos:innerColor="$color:md_white_1000"
                 ohos:margin="6vp"
-                ohos:outer_color="$color:md_grey_900"
+                ohos:outerColor="$color:md_grey_900"
                 ohos:text="$string:txt_grey_900_white"/>
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
-                ohos:inner_color="$color:md_grey_900"
+                ohos:innerColor="$color:md_grey_900"
                 ohos:margin="6vp"
-                ohos:outer_color="$color:md_white_1000"
+                ohos:outerColor="$color:md_white_1000"
                 ohos:text="$string:txt_white_grey_900"/>
 
         </DirectionalLayout>

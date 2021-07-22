@@ -22,7 +22,7 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:slider_icon="$graphic:custom_icon"
+                ohos:sliderIcon="$graphic:custom_icon"
                 ohos:text="$string:txt_custom_icon" />
 
             <Button

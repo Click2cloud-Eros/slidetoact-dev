@@ -22,42 +22,42 @@ ohos:width="match_parent">
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:bump_vibration="30"
+                ohos:bumpVibration="30"
                 ohos:text="$string:txt_bump_vibration_30" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:bump_vibration="50"
+                ohos:bumpVibration="50"
                 ohos:text="$string:txt_bump_vibration_50" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:bump_vibration="100"
+                ohos:bumpVibration="100"
                 ohos:text="$string:txt_bump_vibration_100" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:bump_vibration="130"
+                ohos:bumpVibration="130"
                 ohos:text="$string:txt_bump_vibration_130" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:bump_vibration="150"
+                ohos:bumpVibration="150"
                 ohos:text="$string:txt_bump_vibration_150" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:bump_vibration="200"
+                ohos:bumpVibration="200"
                 ohos:text="$string:txt_bump_vibration_200" />
 
         </DirectionalLayout>
