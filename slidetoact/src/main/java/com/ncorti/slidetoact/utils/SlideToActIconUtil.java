@@ -1,7 +1,6 @@
 package com.ncorti.slidetoact.utils;
 
 import ohos.agp.animation.AnimatorValue;
-import ohos.agp.colors.RgbColor;
 import ohos.agp.components.element.VectorElement;
 import ohos.agp.render.ColorMatrix;
 import ohos.agp.utils.Color;
@@ -17,22 +16,23 @@ public class SlideToActIconUtil {
 
     /**
      * Change icon color using color matrix.
+     * reference from https://stackoverflow.com/a/11171509
      *
      * @param icon instance of VectorElement.
      * @param color target color.
      */
     public static void tintIconCompat(VectorElement icon, Color color) {
-        RgbColor rgbColor = RgbColor.fromArgbInt(color.getValue());
-        float r = rgbColor.getRed() / 255.0f;
-        float g = rgbColor.getGreen() / 255.0f;
-        float b = rgbColor.getBlue() / 255.0f;
+        int iColor = color.getValue();
+
+        int red   = (iColor & 0xFF0000) / 0xFFFF;
+        int green = (iColor & 0xFF00) / 0xFF;
+        int blue  = iColor & 0xFF;
 
         float[] matrix = {
-            r, r, r, r, r, //red
-            g, g, g, g, g, //green
-            b, b, b, b, b, //blue
-            1, 1, 1, 1, 1 //alpha
-        };
+                0, 0, 0, 0, red,
+                0, 0, 0, 0, green,
+                0, 0, 0, 0, blue,
+                0, 0, 0, 1, 0 };
 
         ColorMatrix colorMatrix = new ColorMatrix();
         colorMatrix.setMatrix(matrix);
