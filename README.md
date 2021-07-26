@@ -1,6 +1,6 @@
 # Slide To Act
 
-[![CircleCI](https://circleci.com/gh/cortinico/slidetoact/tree/master.svg?style=shield)](https://circleci.com/gh/cortinico/slidetoact/tree/master)  [ ![Download](https://api.bintray.com/packages/cortinico/maven/slidetoact/images/download.svg) ](https://bintray.com/cortinico/maven/slidetoact/_latestVersion) [![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23336-blue.svg)](http://androidweekly.net/issues/issue-336) [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT) [![Twitter](https://img.shields.io/badge/Twitter-@cortinico-blue.svg?style=flat)](http://twitter.com/cortinico) [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=applibgroup_slideToActView&metric=alert_status)](https://sonarcloud.io/dashboard?id=applibgroup_slideToActView) [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 A simple *Slide to Unlock* **Material** widget for **Android**, written in [**Kotlin**](https://github.com/JetBrains/kotlin) 🇰.
 

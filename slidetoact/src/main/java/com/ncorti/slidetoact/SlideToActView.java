@@ -1257,7 +1257,7 @@ public class SlideToActView extends Component
     }
 
     /**
-     * Method that returns the 'mIsCompleted' flag
+     * Method that returns the 'mIsCompleted' flag.
      *
      * @return True if slider is in the Complete state
      */
