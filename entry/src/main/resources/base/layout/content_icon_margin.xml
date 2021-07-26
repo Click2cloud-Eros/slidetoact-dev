@@ -23,64 +23,50 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:iconMargin="0"
+                ohos:iconMargin="0vp"
                 ohos:text="$string:txt_icon_margin_0" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:iconMargin="4"
+                ohos:iconMargin="4vp"
                 ohos:text="$string:txt_icon_margin_4" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:iconMargin="8"
+                ohos:iconMargin="8vp"
                 ohos:text="$string:txt_icon_margin_8" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:iconMargin="16"
+                ohos:iconMargin="16vp"
                 ohos:text="$string:txt_icon_margin_16" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:iconMargin="24"
+                ohos:iconMargin="20vp"
+                ohos:text="$string:txt_icon_margin_20" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:iconMargin="24vp"
                 ohos:text="$string:txt_icon_margin_24" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:iconMargin="28"
+                ohos:iconMargin="28vp"
                 ohos:text="$string:txt_icon_margin_28" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:iconMargin="32"
-                ohos:text="$string:txt_icon_margin_32" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:iconMargin="36"
-                ohos:text="$string:txt_icon_margin_36" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:iconMargin="42"
-                ohos:text="$string:txt_icon_margin_42" />
 
         </DirectionalLayout>
     </ScrollView>

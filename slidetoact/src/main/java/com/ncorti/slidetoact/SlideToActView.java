@@ -6,9 +6,12 @@ import com.ncorti.slidetoact.utils.SlideToActIconUtil;
 import com.ncorti.slidetoact.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorGroup;
 import ohos.agp.animation.AnimatorValue;
+import ohos.agp.components.Attr;
 import ohos.agp.components.AttrSet;
 import ohos.agp.components.Component;
 import ohos.agp.components.element.VectorElement;
@@ -266,60 +269,51 @@ public class SlideToActView extends Component
         LogUtil.info(TAG, "Init method mDesiredSliderHeight: " + sliderHeight
                 + " mDesiredSliderWidth: " + sliderWidth);
 
+        Optional<Attr> attr;
         if (attrSet != null) {
-            sliderHeight = attrSet.getAttr(Attribute.SLIDER_HEIGHT).isPresent()
-                    ? attrSet.getAttr(Attribute.SLIDER_HEIGHT).get().getIntegerValue()
-                    : sliderHeight;
+            attr = attrSet.getAttr(Attribute.SLIDER_HEIGHT);
+            sliderHeight = attr.map(Attr::getDimensionValue).orElse(sliderHeight);
 
-            borderRadius = attrSet.getAttr(Attribute.BORDER_RADIUS).isPresent()
-                    ? attrSet.getAttr(Attribute.BORDER_RADIUS).get().getIntegerValue()
-                    : -1;
+            attr = attrSet.getAttr(Attribute.BORDER_RADIUS);
+            borderRadius = attr.map(Attr::getDimensionValue).orElse(-1);
 
-            outerColor = attrSet.getAttr(Attribute.OUTER_COLOR).isPresent()
-                    ? attrSet.getAttr(Attribute.OUTER_COLOR).get().getColorValue()
-                    : defaultOuter;
+            attr = attrSet.getAttr(Attribute.OUTER_COLOR);
+            outerColor = attr.map(Attr::getColorValue).orElse(defaultOuter);
 
-            innerColor = attrSet.getAttr(Attribute.INNER_COLOR).isPresent()
-                    ? attrSet.getAttr(Attribute.INNER_COLOR).get().getColorValue()
-                    : defaultWhite;
+            attr = attrSet.getAttr(Attribute.INNER_COLOR);
+            innerColor = attr.map(Attr::getColorValue).orElse(defaultWhite);
 
             // For text color, check if the `text_color` is set.
             // if not the `inner_color` is set.
-            textColor = attrSet.getAttr(Attribute.TEXT_COLOR).isPresent()
-                    ? attrSet.getAttr(Attribute.TEXT_COLOR).get().getColorValue()
-                    : innerColor;
+            attr = attrSet.getAttr(Attribute.TEXT_COLOR);
+            textColor = attr.map(Attr::getColorValue).orElse(innerColor);
 
-            text = attrSet.getAttr(Attribute.TEXT).isPresent()
-                    ? attrSet.getAttr(Attribute.TEXT).get().getStringValue()
-                    : "";
+            attr = attrSet.getAttr(Attribute.TEXT);
+            text = attr.map(Attr::getStringValue).orElse("");
 
-            textSize = attrSet.getAttr(Attribute.TEXT_SIZE).isPresent()
-                    ? attrSet.getAttr(Attribute.TEXT_SIZE).get().getIntegerValue()
-                    : 60;
+            attr = attrSet.getAttr(Attribute.TEXT_SIZE);
+            textSize = attr.map(Attr::getDimensionValue).orElse(60);
 
-            sliderLocked = attrSet.getAttr(Attribute.SLIDER_LOCKED).isPresent()
-                    && attrSet.getAttr(Attribute.SLIDER_LOCKED).get().getBoolValue();
+            attr = attrSet.getAttr(Attribute.SLIDER_LOCKED);
+            sliderLocked = attr.map(Attr::getBoolValue).orElse(false);
 
-            sliderReversed = attrSet.getAttr(Attribute.SLIDER_REVERSED).isPresent()
-                    && attrSet.getAttr(Attribute.SLIDER_REVERSED).get().getBoolValue();
+            attr = attrSet.getAttr(Attribute.SLIDER_REVERSED);
+            sliderReversed = attr.map(Attr::getBoolValue).orElse(false);
 
-            isRotateIcon = !attrSet.getAttr(Attribute.ROTATE_ICON).isPresent()
-                    || attrSet.getAttr(Attribute.ROTATE_ICON).get().getBoolValue();
+            attr = attrSet.getAttr(Attribute.ROTATE_ICON);
+            isRotateIcon = attr.map(Attr::getBoolValue).orElse(true);
 
-            isAnimateCompletion = !attrSet.getAttr(Attribute.ANIMATE_COMPLETION).isPresent()
-                    || attrSet.getAttr(Attribute.ANIMATE_COMPLETION).get().getBoolValue();
+            attr = attrSet.getAttr(Attribute.ANIMATE_COMPLETION);
+            isAnimateCompletion = attr.map(Attr::getBoolValue).orElse(true);
 
-            animationDuration = attrSet.getAttr(Attribute.ANIMATION_DURATION).isPresent()
-                    ? attrSet.getAttr(Attribute.ANIMATION_DURATION).get().getLongValue()
-                    : 300;
+            attr = attrSet.getAttr(Attribute.ANIMATION_DURATION);
+            animationDuration = attr.map(Attr::getLongValue).orElse(300L);
 
-            bumpVibration = attrSet.getAttr(Attribute.BUMP_VIBRATION).isPresent()
-                    ? attrSet.getAttr(Attribute.BUMP_VIBRATION).get().getLongValue()
-                    : 0;
+            attr = attrSet.getAttr(Attribute.BUMP_VIBRATION);
+            bumpVibration = attr.map(Attr::getLongValue).orElse(0L);
 
-            areaMargin = attrSet.getAttr(Attribute.AREA_MARGIN).isPresent()
-                    ? attrSet.getAttr(Attribute.AREA_MARGIN).get().getIntegerValue()
-                    : 24;
+            attr = attrSet.getAttr(Attribute.AREA_MARGIN);
+            areaMargin = attr.map(Attr::getDimensionValue).orElse(24);
 
             sliderIcon = attrSet.getAttr(Attribute.SLIDER_ICON).isPresent()
                     ? (VectorElement) attrSet.getAttr(Attribute.SLIDER_ICON).get().getElement()
@@ -327,17 +321,15 @@ public class SlideToActView extends Component
 
             // For icon color. check if the `slide_icon_color` is set.
             // if not the `outer_color` is set.
-            iconColor = attrSet.getAttr(Attribute.SLIDER_ICON_COLOR).isPresent()
-                    ? attrSet.getAttr(Attribute.SLIDER_ICON_COLOR).get().getColorValue()
-                    : outerColor;
+            attr = attrSet.getAttr(Attribute.SLIDER_ICON_COLOR);
+            iconColor = attr.map(Attr::getColorValue).orElse(outerColor);
 
             completeIcon = attrSet.getAttr(Attribute.COMPLETE_ICON).isPresent()
                     ? (VectorElement) attrSet.getAttr(Attribute.COMPLETE_ICON).get().getElement()
                     : new VectorElement(getContext(), ResourceTable.Graphic_slidetoact_ic_check);
 
-            iconMargin = attrSet.getAttr(Attribute.ICON_MARGIN).isPresent()
-                    ? attrSet.getAttr(Attribute.ICON_MARGIN).get().getIntegerValue()
-                    : 28;
+            attr = attrSet.getAttr(Attribute.ICON_MARGIN);
+            iconMargin = attr.map(Attr::getDimensionValue).orElse(28);
         }
 
         mArrowMargin = iconMargin;
@@ -375,7 +367,6 @@ public class SlideToActView extends Component
         mTextPaint = new Paint();
         mTextPaint.setAntiAlias(true);
         mTextPaint.setTextSize(textSize);
-        mTextPaint.setAlpha(255 * 1f);
         mTextPaint.setColor(textColor);
 
         setLayoutRefreshedListener(this);
@@ -437,10 +428,13 @@ public class SlideToActView extends Component
                 mOuterPaint
         );
 
+        String textToDraw;
+        if (mPositionPercInv == 0) {
+            textToDraw = "";
+        } else {
+            textToDraw = text.toString();
+        }
 
-        // Text alpha
-        mTextPaint.setAlpha(255 * mPositionPercInv);
-        String textToDraw = text.toString();
         canvas.drawText(
                 mTextPaint,
                 textToDraw,

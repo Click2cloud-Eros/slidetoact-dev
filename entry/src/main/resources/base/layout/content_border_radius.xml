@@ -28,57 +28,57 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:borderRadius="0"
+                ohos:borderRadius="0vp"
                 ohos:text="$string:txt_border_radius_0" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:borderRadius="20"
+                ohos:borderRadius="2vp"
+                ohos:text="$string:txt_border_radius_2" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:borderRadius="4vp"
+                ohos:text="$string:txt_border_radius_4" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:borderRadius="8vp"
+                ohos:text="$string:txt_border_radius_8" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:borderRadius="12vp"
+                ohos:text="$string:txt_border_radius_12" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:borderRadius="20vp"
                 ohos:text="$string:txt_border_radius_20" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:borderRadius="40"
-                ohos:text="$string:txt_border_radius_40" />
+                ohos:borderRadius="24vp"
+                ohos:text="$string:txt_border_radius_24" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:borderRadius="60"
-                ohos:text="$string:txt_border_radius_60" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:borderRadius="80"
-                ohos:text="$string:txt_border_radius_80" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:borderRadius="100"
-                ohos:text="$string:txt_border_radius_100" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:borderRadius="120"
-                ohos:text="$string:txt_border_radius_120" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:borderRadius="140"
-                ohos:text="$string:txt_border_radius_140" />
+                ohos:borderRadius="28vp"
+                ohos:text="$string:txt_border_radius_28" />
         </DirectionalLayout>
     </ScrollView>
 

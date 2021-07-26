@@ -29,29 +29,29 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:text_size="20"
+                ohos:text_size="12fp"
+                ohos:text="$string:txt_text_size_12" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:text_size="14fp"
+                ohos:text="$string:txt_text_size_14" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:text_size="16fp"
+                ohos:text="$string:txt_text_size_16" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:text_size="20fp"
                 ohos:text="$string:txt_text_size_20" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:text_size="40"
-                ohos:text="$string:txt_text_size_40" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:text_size="60"
-                ohos:text="$string:txt_text_size_60" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:text_size="80"
-                ohos:text="$string:txt_text_size_80" />
 
         </DirectionalLayout>
     </ScrollView>

@@ -22,71 +22,71 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:sliderHeight="90"
-                ohos:text="$string:txt_slider_height_90" />
+                ohos:sliderHeight="32vp"
+                ohos:text="$string:txt_slider_height_32" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:sliderHeight="120"
+                ohos:sliderHeight="40vp"
+                ohos:text="$string:txt_slider_height_40" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:sliderHeight="48vp"
+                ohos:text="$string:txt_slider_height_48" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:sliderHeight="52vp"
+                ohos:text="$string:txt_slider_height_52" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:sliderHeight="64vp"
+                ohos:text="$string:txt_slider_height_64" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:sliderHeight="80vp"
+                ohos:text="$string:txt_slider_height_80" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:sliderHeight="92vp"
+                ohos:text="$string:txt_slider_height_92" />
+
+            <com.ncorti.slidetoact.SlideToActView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:margin="6vp"
+                ohos:sliderHeight="120vp"
                 ohos:text="$string:txt_slider_height_120" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:sliderHeight="140"
-                ohos:text="$string:txt_slider_height_140" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:sliderHeight="160"
+                ohos:sliderHeight="160vp"
                 ohos:text="$string:txt_slider_height_160" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:sliderHeight="180"
-                ohos:text="$string:txt_slider_height_180" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:sliderHeight="200"
+                ohos:sliderHeight="200vp"
                 ohos:text="$string:txt_slider_height_200" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:sliderHeight="240"
-                ohos:text="$string:txt_slider_height_240" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:sliderHeight="260"
-                ohos:text="$string:txt_slider_height_260" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:sliderHeight="300"
-                ohos:text="$string:txt_slider_height_300" />
-
-            <com.ncorti.slidetoact.SlideToActView
-                ohos:height="match_content"
-                ohos:width="match_parent"
-                ohos:margin="6vp"
-                ohos:sliderHeight="340"
-                ohos:text="$string:txt_slider_height_340" />
 
         </DirectionalLayout>
     </ScrollView>
