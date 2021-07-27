@@ -14,6 +14,7 @@ import ohos.agp.animation.AnimatorValue;
 import ohos.agp.components.Attr;
 import ohos.agp.components.AttrSet;
 import ohos.agp.components.Component;
+import ohos.agp.components.element.Element;
 import ohos.agp.components.element.VectorElement;
 import ohos.agp.render.Canvas;
 import ohos.agp.render.Paint;
@@ -23,7 +24,10 @@ import ohos.multimodalinput.event.TouchEvent;
 import ohos.vibrator.agent.VibratorAgent;
 
 /**
- * SlideToActView.
+ *  Class representing the custom view, SlideToActView.
+ *
+ *  SlideToActView is an elegant material designed slider, that enrich your app
+ *  with a "Slide-to-unlock" like widget.
  */
 public class SlideToActView extends Component
         implements
@@ -99,7 +103,7 @@ public class SlideToActView extends Component
     /**
      * Private size for the text message.
      */
-    private int textSize = 60;
+    private int textSize = 48;
 
     /**
      * Margin for Icon.
@@ -124,12 +128,12 @@ public class SlideToActView extends Component
     /**
      * Custom Slider Icon.
      */
-    private VectorElement sliderIcon;
+    private Element sliderIcon;
 
     /**
      * Custom Complete Icon.
      */
-    private VectorElement completeIcon;
+    private Element completeIcon;
 
     /* -------------------- REQUIRED FIELDS -------------------- */
     /**
@@ -163,12 +167,12 @@ public class SlideToActView extends Component
     /**
      * Arrow vector element.
      */
-    private VectorElement mDrawableArrow;
+    private Element mDrawableArrow;
 
     /**
      * Tick vector element.
      */
-    private VectorElement mDrawableTick;
+    private Element mDrawableTick;
 
     private boolean mFlagDrawTick = false;
 
@@ -292,7 +296,7 @@ public class SlideToActView extends Component
             text = attr.map(Attr::getStringValue).orElse("");
 
             attr = attrSet.getAttr(Attribute.TEXT_SIZE);
-            textSize = attr.map(Attr::getDimensionValue).orElse(60);
+            textSize = attr.map(Attr::getDimensionValue).orElse(48);
 
             attr = attrSet.getAttr(Attribute.SLIDER_LOCKED);
             sliderLocked = attr.map(Attr::getBoolValue).orElse(false);
@@ -316,7 +320,7 @@ public class SlideToActView extends Component
             areaMargin = attr.map(Attr::getDimensionValue).orElse(24);
 
             sliderIcon = attrSet.getAttr(Attribute.SLIDER_ICON).isPresent()
-                    ? (VectorElement) attrSet.getAttr(Attribute.SLIDER_ICON).get().getElement()
+                    ? attrSet.getAttr(Attribute.SLIDER_ICON).get().getElement()
                     : new VectorElement(getContext(), ResourceTable.Graphic_slidetoact_ic_arrow);
 
             // For icon color. check if the `slide_icon_color` is set.
@@ -325,7 +329,7 @@ public class SlideToActView extends Component
             iconColor = attr.map(Attr::getColorValue).orElse(outerColor);
 
             completeIcon = attrSet.getAttr(Attribute.COMPLETE_ICON).isPresent()
-                    ? (VectorElement) attrSet.getAttr(Attribute.COMPLETE_ICON).get().getElement()
+                    ? attrSet.getAttr(Attribute.COMPLETE_ICON).get().getElement()
                     : new VectorElement(getContext(), ResourceTable.Graphic_slidetoact_ic_check);
 
             attr = attrSet.getAttr(Attribute.ICON_MARGIN);
@@ -340,7 +344,7 @@ public class SlideToActView extends Component
         mDrawableArrow = sliderIcon;
         mDrawableTick = completeIcon;
 
-        SlideToActIconUtil.tintIconCompat(mDrawableArrow, iconColor);
+        SlideToActIconUtil.setIconColor(mDrawableArrow, iconColor);
 
         mOuterRect = new RectF(
                 mActualAreaWidth,
@@ -500,7 +504,7 @@ public class SlideToActView extends Component
                 mAreaHeight - mTickMargin
         );
 
-        SlideToActIconUtil.tintIconCompat(mDrawableTick, innerColor);
+        SlideToActIconUtil.setIconColor(mDrawableTick, innerColor);
 
         LogUtil.info(TAG, "mFlagDrawTick: " + mFlagDrawTick
                 + " mActualAreaWidth: " + mActualAreaWidth
@@ -1038,7 +1042,7 @@ public class SlideToActView extends Component
      */
     public void setIconColor(Color iconColor) {
         this.iconColor = iconColor;
-        SlideToActIconUtil.tintIconCompat(mDrawableArrow, iconColor);
+        SlideToActIconUtil.setIconColor(mDrawableArrow, iconColor);
         invalidate();
     }
 
@@ -1219,7 +1223,7 @@ public class SlideToActView extends Component
      *
      * @return The slider icon in VectorElement form.
      */
-    public VectorElement getSliderIcon() {
+    public Element getSliderIcon() {
         return sliderIcon;
     }
 
@@ -1228,10 +1232,10 @@ public class SlideToActView extends Component
      *
      * @param sliderIcon The slider icon.
      */
-    public void setSliderIcon(VectorElement sliderIcon) {
+    public void setSliderIcon(Element sliderIcon) {
         this.sliderIcon = sliderIcon;
         mDrawableArrow = sliderIcon;
-        SlideToActIconUtil.tintIconCompat(mDrawableArrow, iconColor);
+        SlideToActIconUtil.setIconColor(mDrawableArrow, iconColor);
         invalidate();
     }
 
@@ -1240,7 +1244,7 @@ public class SlideToActView extends Component
      *
      * @return The complete icon in VectorElement form.
      */
-    public VectorElement getCompleteIcon() {
+    public Element getCompleteIcon() {
         return completeIcon;
     }
 
@@ -1252,7 +1256,7 @@ public class SlideToActView extends Component
     public void setCompleteIcon(VectorElement completeIcon) {
         this.completeIcon = completeIcon;
         mDrawableTick = completeIcon;
-        SlideToActIconUtil.tintIconCompat(mDrawableTick, iconColor);
+        SlideToActIconUtil.setIconColor(mDrawableTick, iconColor);
         invalidate();
     }
 

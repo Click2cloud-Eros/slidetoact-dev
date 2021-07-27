@@ -1,7 +1,26 @@
+
+/*
+ * Copyright (C) 2020-21 Application Library Engineering Group
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License")
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.ncorti.slidetoact.example.slice;
 
 import com.ncorti.slidetoact.SlideToActView;
 import com.ncorti.slidetoact.example.ResourceTable;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,7 +30,9 @@ import ohos.aafwk.content.Intent;
 import ohos.agp.components.Component;
 import ohos.agp.components.DirectionalLayout;
 import ohos.agp.components.Text;
+import ohos.agp.components.element.PixelMapElement;
 import ohos.agp.components.element.VectorElement;
+import ohos.global.resource.NotExistException;
 
 /**
  * SampleAbilitySlice.
@@ -63,7 +84,12 @@ public class SampleAbilitySlice extends AbilitySlice {
                 Component.ClickedListener listener = component -> {
                     switch (component.getId()) {
                         case ResourceTable.Id_button_app_icon:
-                            slider.setSliderIcon(new VectorElement(getContext(), ResourceTable.Graphic_ic_android));
+                            //You can set png format icon using PixelMapElement.
+                            try {
+                                slider.setSliderIcon(new PixelMapElement(getResourceManager().getResource(ResourceTable.Media_ic_lock)));
+                            } catch (IOException | NotExistException e) {
+                                e.printStackTrace();
+                            }
                             break;
                         case ResourceTable.Id_button_cloud_icon:
                             slider.setSliderIcon(new VectorElement(getContext(), ResourceTable.Graphic_ic_cloud));

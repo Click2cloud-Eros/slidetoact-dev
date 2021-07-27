@@ -1,7 +1,24 @@
+
+/*
+ * Copyright (C) 2020-21 Application Library Engineering Group
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License")
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.ncorti.slidetoact.utils;
 
 import ohos.agp.animation.AnimatorValue;
-import ohos.agp.components.element.VectorElement;
+import ohos.agp.components.element.Element;
 import ohos.agp.render.ColorMatrix;
 import ohos.agp.utils.Color;
 
@@ -18,10 +35,10 @@ public class SlideToActIconUtil {
      * Change icon color using color matrix.
      * reference from https://stackoverflow.com/a/11171509
      *
-     * @param icon instance of VectorElement.
+     * @param icon instance of Element.
      * @param color target color.
      */
-    public static void tintIconCompat(VectorElement icon, Color color) {
+    public static void setIconColor(Element icon, Color color) {
         int iColor = color.getValue();
 
         int red   = (iColor & 0xFF0000) / 0xFFFF;
@@ -41,8 +58,7 @@ public class SlideToActIconUtil {
     }
 
     /**
-     * Creates a [ValueAnimator] to animate the complete icon. Uses the [fallbackToFadeAnimation]
-     * to decide if the icon should be animated with a Fade or with using [AnimatedVectorDrawable].
+     * Creates a [AnimatorValue] for the complete icon.
      *
      * @param listener animator value update listner.
      */
