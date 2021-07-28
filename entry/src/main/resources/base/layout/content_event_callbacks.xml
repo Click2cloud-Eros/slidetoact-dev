@@ -34,6 +34,7 @@
             ohos:left_margin="8vp"
             ohos:right_margin="8vp"
             ohos:text_alignment="bottom"
+            ohos:multiple_lines="true"
             ohos:text_size="14fp" />
 
     </DirectionalLayout>

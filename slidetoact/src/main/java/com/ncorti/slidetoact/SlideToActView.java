@@ -3,7 +3,7 @@ package com.ncorti.slidetoact;
 import com.ncorti.slidetoact.utils.AnimationUtils;
 import com.ncorti.slidetoact.utils.LogUtil;
 import com.ncorti.slidetoact.utils.SlideToActIconUtil;
-import com.ncorti.slidetoact.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +12,7 @@ import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorGroup;
 import ohos.agp.animation.AnimatorValue;
 import ohos.agp.components.Attr;
+import ohos.agp.components.AttrHelper;
 import ohos.agp.components.AttrSet;
 import ohos.agp.components.Component;
 import ohos.agp.components.element.Element;
@@ -267,8 +268,8 @@ public class SlideToActView extends Component
         Color defaultOuter = new Color(getContext().getColor(ResourceTable.Color_slidetoact_defaultAccent));
         Color defaultWhite = new Color(getContext().getColor(ResourceTable.Color_slidetoact_white));
 
-        sliderHeight = Utils.dp2px(DESIRED_SLIDER_HEIGHT_DP);
-        sliderWidth = Utils.dp2px(DESIRED_SLIDER_WIDTH_DP);
+        sliderHeight = AttrHelper.vp2px(DESIRED_SLIDER_HEIGHT_DP, getContext());
+        sliderWidth = AttrHelper.vp2px(DESIRED_SLIDER_WIDTH_DP, getContext());
 
         LogUtil.info(TAG, "Init method mDesiredSliderHeight: " + sliderHeight
                 + " mDesiredSliderWidth: " + sliderWidth);

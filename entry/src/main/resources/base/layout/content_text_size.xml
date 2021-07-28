@@ -29,28 +29,28 @@
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:text_size="12fp"
+                ohos:textSize="12fp"
                 ohos:text="$string:txt_text_size_12" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:text_size="14fp"
+                ohos:textSize="14fp"
                 ohos:text="$string:txt_text_size_14" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:text_size="16fp"
+                ohos:textSize="16fp"
                 ohos:text="$string:txt_text_size_16" />
 
             <com.ncorti.slidetoact.SlideToActView
                 ohos:height="match_content"
                 ohos:width="match_parent"
                 ohos:margin="6vp"
-                ohos:text_size="20fp"
+                ohos:textSize="20fp"
                 ohos:text="$string:txt_text_size_20" />
 
         </DirectionalLayout>
