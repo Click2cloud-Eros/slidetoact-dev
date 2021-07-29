@@ -25,6 +25,7 @@ A simple *Slide to Unlock* **Material** widget for **Harmony os**, written in [*
         * [``bumpVibration``](#bumpVibration)
         * [``rotateIcon``](#rotateIcon)
     * [Event callbacks](#event-callbacks)
+* [Future Work](#future-work)
 * [Demo](#demo-)
 * [Building/Testing](#buildingtesting-)
     * [CircleCI](#circleci-)
