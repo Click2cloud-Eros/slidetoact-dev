@@ -19,7 +19,6 @@ package com.ncorti.slidetoact.example.slice;
 
 import com.ncorti.slidetoact.SlideToActView;
 import com.ncorti.slidetoact.example.ResourceTable;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -86,7 +85,8 @@ public class SampleAbilitySlice extends AbilitySlice {
                         case ResourceTable.Id_button_app_icon:
                             //You can set png format icon using PixelMapElement.
                             try {
-                                slider.setSliderIcon(new PixelMapElement(getResourceManager().getResource(ResourceTable.Media_ic_lock)));
+                                slider.setSliderIcon(new PixelMapElement(
+                                        getResourceManager().getResource(ResourceTable.Media_ic_lock)));
                             } catch (IOException | NotExistException e) {
                                 e.printStackTrace();
                             }

@@ -3,11 +3,9 @@ package com.ncorti.slidetoact;
 import com.ncorti.slidetoact.utils.AnimationUtils;
 import com.ncorti.slidetoact.utils.LogUtil;
 import com.ncorti.slidetoact.utils.SlideToActIconUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorGroup;
 import ohos.agp.animation.AnimatorValue;
@@ -27,8 +25,8 @@ import ohos.vibrator.agent.VibratorAgent;
 /**
  *  Class representing the custom view, SlideToActView.
  *
- *  SlideToActView is an elegant material designed slider, that enrich your app
- *  with a "Slide-to-unlock" like widget.
+ *  <p>SlideToActView is an elegant material designed slider, that enrich your app
+ *  with a "Slide-to-unlock" like widget.</p>
  */
 public class SlideToActView extends Component
         implements
@@ -40,8 +38,8 @@ public class SlideToActView extends Component
     private static final String TAG = SlideToActView.class.getSimpleName();
 
     /* -------------------- LAYOUT BOUNDS -------------------- */
-    private static final float DESIRED_SLIDER_HEIGHT_DP = 72F;
-    private static final float DESIRED_SLIDER_WIDTH_DP = 280F;
+    private static final float DESIRED_SLIDER_HEIGHT_VP = 72F;
+    private static final float DESIRED_SLIDER_WIDTH_VP = 280F;
 
     /* -------------------- MEMBERS -------------------- */
 
@@ -268,8 +266,8 @@ public class SlideToActView extends Component
         Color defaultOuter = new Color(getContext().getColor(ResourceTable.Color_slidetoact_defaultAccent));
         Color defaultWhite = new Color(getContext().getColor(ResourceTable.Color_slidetoact_white));
 
-        sliderHeight = AttrHelper.vp2px(DESIRED_SLIDER_HEIGHT_DP, getContext());
-        sliderWidth = AttrHelper.vp2px(DESIRED_SLIDER_WIDTH_DP, getContext());
+        sliderHeight = AttrHelper.vp2px(DESIRED_SLIDER_HEIGHT_VP, getContext());
+        sliderWidth = AttrHelper.vp2px(DESIRED_SLIDER_WIDTH_VP, getContext());
 
         LogUtil.info(TAG, "Init method mDesiredSliderHeight: " + sliderHeight
                 + " mDesiredSliderWidth: " + sliderWidth);
@@ -297,7 +295,8 @@ public class SlideToActView extends Component
             text = attr.map(Attr::getStringValue).orElse("");
 
             attr = attrSet.getAttr(Attribute.TEXT_SIZE);
-            textSize = attr.map(Attr::getDimensionValue).orElse(48);
+            textSize = attr.map(Attr::getDimensionValue)
+                    .orElse(AttrHelper.convertDimensionToPix(getContext(), "16fp", 48));
 
             attr = attrSet.getAttr(Attribute.SLIDER_LOCKED);
             sliderLocked = attr.map(Attr::getBoolValue).orElse(false);
@@ -318,7 +317,8 @@ public class SlideToActView extends Component
             bumpVibration = attr.map(Attr::getLongValue).orElse(0L);
 
             attr = attrSet.getAttr(Attribute.AREA_MARGIN);
-            areaMargin = attr.map(Attr::getDimensionValue).orElse(24);
+            areaMargin = attr.map(Attr::getDimensionValue)
+                    .orElse(AttrHelper.convertDimensionToPix(getContext(), "8vp", 24));
 
             sliderIcon = attrSet.getAttr(Attribute.SLIDER_ICON).isPresent()
                     ? attrSet.getAttr(Attribute.SLIDER_ICON).get().getElement()
@@ -334,7 +334,8 @@ public class SlideToActView extends Component
                     : new VectorElement(getContext(), ResourceTable.Graphic_slidetoact_ic_check);
 
             attr = attrSet.getAttr(Attribute.ICON_MARGIN);
-            iconMargin = attr.map(Attr::getDimensionValue).orElse(28);
+            iconMargin = attr.map(Attr::getDimensionValue)
+                    .orElse(AttrHelper.convertDimensionToPix(getContext(), "16vp", 28));
         }
 
         mArrowMargin = iconMargin;
@@ -599,13 +600,12 @@ public class SlideToActView extends Component
         } else if (mPosn > 0 && mPositionPerc >= GRACE_VALUE) {
             setEnabled(false); // Fully disable touch events
             startAnimationComplete();
-        } else if (mFlagMoving && mPosn == 0) {
+        } else if (mFlagMoving && mPosn == 0  && onSlideUserFailedListener != null) {
             // mFlagMoving == true means user successfully grabbed the slider,
             // but mPosition == 0 means that the slider is released at the beginning
             // so either a Tap or the user slided back.
-            if (onSlideUserFailedListener != null) {
-                onSlideUserFailedListener.onSlideFailed(this, false);
-            }
+
+            onSlideUserFailedListener.onSlideFailed(this, false);
         }
         mFlagMoving = false;
     }
