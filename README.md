@@ -7,6 +7,7 @@ A simple *Slide to Unlock* **Material** widget for **Harmony os**, written in [*
   <img src="assets/slidetoact.gif" alt="sample-slidetoact gif"/>
 </p>
 
+* [Source](#Source)
 * [Getting Started](#getting-started-)
 * [Example](#example-)
 * [Features](#features-)
@@ -24,6 +25,7 @@ A simple *Slide to Unlock* **Material** widget for **Harmony os**, written in [*
         * [``bumpVibration``](#bumpVibration)
         * [``rotateIcon``](#rotateIcon)
     * [Event callbacks](#event-callbacks)
+* [Future Work](#future-work)
 * [Demo](#demo-)
 * [Building/Testing](#buildingtesting-)
     * [CircleCI](#circleci-)
@@ -33,6 +35,9 @@ A simple *Slide to Unlock* **Material** widget for **Harmony os**, written in [*
 * [Contributing](#contributing-)
 * [Honorable Mentions](#honorable-mentions-)
 * [License](#license-)
+
+## Source
+Inspired from android library https://github.com/cortinico/slidetoact
 
 ## Getting Started 👣
 
@@ -258,6 +263,16 @@ You can use the ``OnSlideCompleteListener`` and the ``OnSlideResetListener`` to 
 You can try the **Event Callbacks** in the [Demo app](#demo) to better understand where every callback is called.
 
 <p align="center"><img src="assets/event_log.png" alt="event_log" width="40%"/></p>
+
+## Future Work
+1. Adding Elevation support.
+2. Adding clipChildren support to obtain this behavior:
+
+<p align="center">
+  <img src="assets/area_margin_3.png" alt="custom_icon" width="40%"/>
+</p>
+
+3. Adding Text style and custom text feature.
 
 ## Demo 📲
 
