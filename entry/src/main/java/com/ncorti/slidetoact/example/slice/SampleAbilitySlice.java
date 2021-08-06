@@ -122,21 +122,13 @@ public class SampleAbilitySlice extends AbilitySlice {
         mSlideList = getSlideList();
 
         findComponentById(ResourceTable.Id_btn_reset_slider)
-                .setClickedListener(component -> {
-                    for (SlideToActView slide : mSlideList) {
-                        slide.resetSlider();
-                    }
-                });
+                .setClickedListener(component -> resetAllSlider());
     }
 
-    @Override
-    public void onActive() {
-        super.onActive();
-    }
-
-    @Override
-    public void onForeground(Intent intent) {
-        super.onForeground(intent);
+    private void resetAllSlider() {
+        for (SlideToActView slide : mSlideList) {
+            slide.resetSlider();
+        }
     }
 
     private List<SlideToActView> getSlideList() {

@@ -34,7 +34,7 @@
                 ohos:background_element="$ohos:color:id_color_activated_start_dark"
                 ohos:layout_alignment="horizontal_center"
                 ohos:text_size="14fp"
-                ohos:text="$string:use_app_icon" />
+                ohos:text="$string:use_lock_icon" />
 
             <Button
                 ohos:id="$+id:button_cloud_icon"
@@ -56,6 +56,7 @@
                 ohos:background_element="$ohos:color:id_color_activated_start_dark"
                 ohos:layout_alignment="horizontal_center"
                 ohos:text_size="14fp"
+                ohos:multiple_lines="true"
                 ohos:text="$string:complete_custom_icon" />
 
         </DirectionalLayout>

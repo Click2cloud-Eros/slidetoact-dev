@@ -39,7 +39,6 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
         findComponentById(ResourceTable.Id_button_icon_margin).setClickedListener(this);
         findComponentById(ResourceTable.Id_button_colors).setClickedListener(this);
         findComponentById(ResourceTable.Id_button_border_radius).setClickedListener(this);
-        //    findComponentById(ResourceTable.Id_button_elevation).setClickedListener(this);
         findComponentById(ResourceTable.Id_button_text_size).setClickedListener(this);
         findComponentById(ResourceTable.Id_button_slider_dimension).setClickedListener(this);
         findComponentById(ResourceTable.Id_button_event_callbacks).setClickedListener(this);
@@ -53,16 +52,6 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
 
         Button resetSlider = (Button) findComponentById(ResourceTable.Id_btn_reset_slider);
         resetSlider.setClickedListener(component -> slideToActView.resetSlider());
-    }
-
-    @Override
-    public void onActive() {
-        super.onActive();
-    }
-
-    @Override
-    public void onForeground(Intent intent) {
-        super.onForeground(intent);
     }
 
     @Override

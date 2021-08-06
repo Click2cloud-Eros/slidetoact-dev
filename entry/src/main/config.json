@@ -16,6 +16,18 @@
   "module": {
     "package": "com.ncorti.slidetoact.example",
     "name": ".MyApplication",
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.VIBRATE",
+        "reason": "vibration",
+        "usedScene": {
+          "ability": [
+            ".MainAbility"
+          ],
+          "when": "inuse"
+        }
+      }
+    ],
     "deviceType": [
       "phone"
     ],

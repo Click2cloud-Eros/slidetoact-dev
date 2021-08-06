@@ -52,7 +52,7 @@ public class SlideToActView extends Component
     /**
      * Text message.
      */
-    private CharSequence text = "";
+    private CharSequence text = "SlideToActView";
 
     /**
      * Border Radius, default to mAreaHeight/2, -1 when not initialized.
@@ -292,7 +292,7 @@ public class SlideToActView extends Component
             textColor = attr.map(Attr::getColorValue).orElse(innerColor);
 
             attr = attrSet.getAttr(Attribute.TEXT);
-            text = attr.map(Attr::getStringValue).orElse("");
+            text = attr.map(Attr::getStringValue).orElse("SlideToActView");
 
             attr = attrSet.getAttr(Attribute.TEXT_SIZE);
             textSize = attr.map(Attr::getDimensionValue)
@@ -512,7 +512,8 @@ public class SlideToActView extends Component
                 + " mActualAreaWidth: " + mActualAreaWidth
                 + " mTickMargin: " + mTickMargin
                 + " mAreaWidth: " + mAreaWidth
-                + " mAreaHeight: " + mAreaHeight);
+                + " mAreaHeight: " + mAreaHeight
+                + " mPositionPercInv: " + mPositionPercInv);
 
         if (mFlagDrawTick) {
             mDrawableTick.drawToCanvas(canvas);
@@ -541,7 +542,7 @@ public class SlideToActView extends Component
 
         invalidate();
         // Make sure the position is recomputed.
-        updatePosition(0);
+        updatePosition(mPosn);
     }
 
     @Override
@@ -593,7 +594,8 @@ public class SlideToActView extends Component
             AnimatorValue positionAnimator = new AnimatorValue();
             positionAnimator.setDuration(animationDuration);
             positionAnimator.setValueUpdateListener((animatorValue, v) -> {
-                updatePosition((int) v);
+                float value = AnimationUtils.getAnimatedValue(v, mPosn, 0);
+                updatePosition((int) value);
                 invalidate();
             });
             positionAnimator.start();
